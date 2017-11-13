@@ -1,0 +1,56 @@
+$zero:0px;
+@import "mixin";
+html{
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+*,:before,:after{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.zeroMP{
+  margin: $zero;
+  padding: $zero;
+}
+header,section,footer,main,aside,nav,article,figure{
+  display:block;
+  @extend .zeroMP;
+}
+html,body,,p{
+  @extend .zeroMP;
+}
+ul,ol{
+  margin:0;
+}
+video,object,embed,img{
+  max-width:100%;
+  height:auto;
+}
+img{
+  border: $zero;
+  vertical-align: top;
+}
+a{text-decoration: none;}
+input:focus,button:focus,select:focus,select{outline: none;}
+input,textarea,select{
+  @include placeholder-color;
+}
+input[type=button],input[type=submit],button{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @include user-select(none);
+}
+input[type=button]:focus,input[type=submit]:focus,button:focus{
+  outline: none;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+::-moz-selection,::-webkit-keygen-select,::selection{
+  background-color: #6998ff;
+  color:#fff;
+}

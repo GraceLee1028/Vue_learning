@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/vue.css">
+</head>
+<body>
+<main  id="content">
+    <h1>{{title}}</h1>
+    <ol>
+        <li><a href="#Mustache">插值</a></li>
+        <li><a href="#htmlP">html</a></li>
+        <li><a href="#bind">特性——v-bind:,缩写:</a></li>
+        <li><a href="#express">使用javascript表达式</a></li>
+        <li><a href="#order">指令</a></li>
+        <li><a href="#computed">计算属性</a></li>
+        <li><a href="#classStyle">class和style</a></li>
+    </ol>
+    <section>
+        <p id="Mustache"></p>
+        <p id="htmlP"></p>
+        <p id="bind">
+            v-bind:src【缩写：:src】<br>
+            <img v-bind:src="clothes" alt="婚纱"><br>
+            v-bind:disabled【缩写：:disabled】<br>
+            <button type="button" :disabled="disable">禁用</button>
+        </p>
+        <p id="express">
+            性别：
+            <label>
+                <input type="radio" value="0" v-model="sex">男
+            </label>
+            <label>
+                <input type="radio" value="1" v-model="sex">女
+            </label>
+            <span>性别为：{{sex=="0"?"男":"女"}}</span>
+        </p>
+        <p id="order">
+            <span>v-if实例</span>
+            <span v-if="hide">你看不见我</span>
+            <span v-if="show">你看得见我</span>
+            <br>
+            <a v-bind:href="baidu">百度一下</a>
+            <br>
+            <form @submit="">
+                <button type="submit">登陆</button>
+            </form>
+            <form @submit.prevent="">
+                <button type="submit">登陆</button>
+            </form>
+        </p>
+        <p id="computed">
+            <h3>计算属性的getter</h3>
+            姓名：<input type="text" v-model="userName"><br>
+            年龄：<input type="text" v-model="age"><br>
+            <span>你的名字:{{reverseName}}</span><br>
+            <span>你的年龄:{{age}}</span>
+            <br>
+            <span>你的信息：</span>{{info}}
+            <h3>计算属性setter</h3>
+        </p>
+        <p id="classStyle">
+
+        </p>
+    </section>
+</main>
+</body>
+<script src="../plugins/vue.js"></script>
+<script src="../vueJs/1.js?1132"></script>
+</html>

@@ -1,0 +1,295 @@
+html {
+  font-size: 20px; }
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  html {
+    font-size: 22px; } }
+@media screen and (min-width: 415px) and (max-width: 639px) {
+  html {
+    font-size: 22.5px; } }
+@media screen and (min-width: 640px) and (max-width: 719px) {
+  html {
+    font-size: 23px; } }
+@media screen and (min-width: 720px) and (max-width: 749px) {
+  html {
+    font-size: 23.5px; } }
+@media screen and (min-width: 750px) and (max-width: 799px) {
+  html {
+    font-size: 24px; } }
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 24px; } }
+/*multi overflow*/
+/*multi overflow*/
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+*, :before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.zeroMP, header, section, footer, main, aside, nav, article, figure, html, body, p {
+  margin: 0px;
+  padding: 0px; }
+
+header, section, footer, main, aside, nav, article, figure {
+  display: block; }
+
+ul, ol {
+  margin: 0; }
+
+video, object, embed, img {
+  max-width: 100%;
+  height: auto; }
+
+img {
+  border: 0px;
+  vertical-align: top; }
+
+a {
+  text-decoration: none; }
+
+input:focus, button:focus, select:focus, select {
+  outline: none; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder {
+  color: #999;
+  text-shadow: none;
+  -webkit-text-fill-color: initial;
+  text-overflow: ellipsis; }
+input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
+  color: #999;
+  text-shadow: none;
+  -webkit-text-fill-color: initial;
+  text-overflow: ellipsis; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder {
+  color: #999;
+  text-shadow: none;
+  -webkit-text-fill-color: initial;
+  text-overflow: ellipsis; }
+
+input[type=button], input[type=submit], button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+input[type=button]:focus, input[type=submit]:focus, button:focus {
+  outline: none; }
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse; }
+
+::-moz-selection, ::-webkit-keygen-select, ::selection {
+  background-color: #6998ff;
+  color: #fff; }
+
+/*multi overflow*/
+.btn, .form-control {
+  line-height: 1.42857143;
+  font-size: 0.7rem;
+  padding: .3rem .6rem;
+  color: #333;
+  border: 1px solid #bfb8b8;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear; }
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer; }
+
+.btn-theme {
+  background: #ff6000;
+  border: 1px solid #ff6000;
+  color: #fff; }
+  .btn-theme:hover {
+    background: #ff5000;
+    color: #fff; }
+
+.btn-submit {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  -webkit-border-radius: 2.25rem;
+  -moz-border-radius: 2.25rem;
+  border-radius: 2.25rem; }
+
+.btn-light {
+  background: rgba(255, 96, 0, 0.7); }
+  .btn-light:hover {
+    background: #ff6000; }
+
+.btn-second {
+  background: transparent;
+  border: 1px solid #ff6000;
+  color: #ff6000; }
+  .btn-second:hover {
+    color: #ff6000;
+    background-color: #fff; }
+
+.form-control {
+  display: block;
+  width: 100%; }
+  .form-control:hover, .form-control:focus {
+    border-color: rgba(255, 96, 0, 0.7); }
+
+/**
+ * Created by lea on 2017/11/10.
+ */
+.header {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; }
+
+.header {
+  width: 100%;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  -webkit-box-shadow: 0 0.08rem 0.16rem #f7c7b1;
+  -moz-box-shadow: 0 0.08rem 0.16rem #f7c7b1;
+  box-shadow: 0 0.08rem 0.16rem #f7c7b1;
+  background: #ff6000;
+  background: -moz-linear-gradient(left, #ff9000, #ff6000);
+  background: -webkit-linear-gradient(left, #ff9000, #ff6000);
+  background: -o-linear-gradient(left, #ff9000, #ff6000);
+  color: #fff; }
+  .header h1 {
+    font-size: .9rem;
+    position: relative;
+    margin: 0; }
+  .header .back {
+    position: absolute;
+    left: -0.75rem;
+    color: #fff; }
+  .header .back i {
+    font-size: 1rem; }
+
+.main {
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  padding: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch; }
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600; }
+
+h1, .h1 {
+  font-size: 1.1rem;
+  margin: 1rem 0; }
+
+h2, h2 {
+  font-size: 1rem;
+  margin: .9rem 0; }
+
+h3, .h3 {
+  font-size: .9rem;
+  margin: .75rem 0; }
+
+h4, .h4 {
+  font-size: .8rem;
+  margin: .6rem 0; }
+
+h5, .h5 {
+  font-size: .7rem;
+  margin: .5rem 0; }
+
+.fl, .fr {
+  *display: inline; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.list-none {
+  list-style: none; }
+  .list-none li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0; }
+
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+.clearfix:after {
+  clear: both; }
+
+.show {
+  display: block !important; }
+
+.hide {
+  display: none !important; }
+
+/*text style*/
+.single-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.text-center {
+  text-align: center; }
+
+.text-left {
+  text-align: left; }
+
+.text-right {
+  text-align: left; }
+
+.text-gray {
+  color: #666; }
+
+.mark-primary {
+  background-color: #fff; }
+
+.text-bold {
+  font-weight: 600 !important; }
+
+.text-danger {
+  color: #f00 !important; }
+
+.text-success {
+  color: #009966 !important; }
+
+.text-nowrap {
+  white-space: nowrap !important; }
+
+button:disabled, input[type=button]:disabled, input[type=submit]:disabled {
+  cursor: not-allowed; }
+
+body {
+  font: 0.7rem Roboto, Microsoft Yahei, \\82F9\65B9, Tahoma, \\9ED1\4F53, Arial, \\5B8B\4F53 ; }
+
+img {
+  width: 5rem;
+  height: 5rem; }
+
+/*# sourceMappingURL=vue.css.map */

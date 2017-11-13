@@ -1,0 +1,62 @@
+@import "mixin";
+$height:.18rem;
+$radius:.3rem;
+$line-height:1.42857143;
+$bg-opacity:.8;
+.btn,.form-control{
+  //height: $height;
+  line-height: $line-height;
+  font-size: $font-size;
+  padding: .3rem .6rem;
+  color:$color;
+  border: 1px solid $border-color;
+  @include radius($radius);
+  @include transition(all,.1s);
+}
+//button
+.btn{
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.btn-theme{
+  background: $theme-color;
+  border: 1px solid $theme-color;
+  color: #fff;
+  &:hover{
+    background: $bold-color;
+    color:#fff;
+  }
+}
+.btn-submit{
+  display:block;
+  width:80%;
+  margin: 0 auto;
+  @include radius(2.25rem);
+}
+.btn-light{
+  @include property-transparent(background,$theme-color,.7);
+  &:hover{
+    @include property-transparent(background,$theme-color,1);
+  }
+}
+.btn-second{
+  background: transparent;
+  border:1px solid $theme-color;
+  color: $theme-color;
+  &:hover{
+    color:$theme-color;
+    background-color: #fff;
+  }
+}
+//input,select
+.form-control{
+  display:block;
+  width: 100%;
+  &:hover,&:focus{
+    border-color:transparentize($theme-color,.3);
+  }
+}

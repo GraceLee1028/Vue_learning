@@ -1,0 +1,45 @@
+/**
+ * Created by lea on 2017/11/10.
+ */
+.header{
+  padding:{
+    left:$padding;
+    right:$padding;
+  };
+}
+.header{
+  width:100%;
+  height:2.25rem;
+  line-height: 2.25rem;
+  position:fixed;
+  top:0;
+  left:0;
+  text-align: center;
+  @include box-shadow($shadow:0 0.08rem 0.16rem #f7c7b1);
+  @include linear-gradient(#ff9000,$theme-color);
+  color:#fff;
+  h1{
+    font-size:.9rem;
+    position:relative;
+    margin:0;
+  }
+  .back{
+    position:absolute;
+    left:-$padding;
+    color:#fff;
+  }
+  .back i{
+    font-size:1rem;
+  }
+}
+.main{
+  position:absolute;
+  top:2.5rem;
+  left:0;
+  right:0;
+  bottom:0;
+  overflow-y: scroll;
+  padding:$padding;
+  -webkit-overflow-scrolling:touch;
+  overflow-scrolling:touch;
+}

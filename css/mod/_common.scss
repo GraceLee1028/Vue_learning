@@ -1,0 +1,116 @@
+html{font-size:20px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:21px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:22px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:22.5px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:23px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:23.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:24px}}
+@media screen and (min-width:800px){html{font-size:24px}}
+$border-color:#bfb8b8;
+$bold-color:#ff5000;
+$theme-color:#ff6000;
+$light-color:#f58000;
+$font-size:.7rem;
+$color:#333;
+$padding:.75rem;
+@import "mixin";
+@import "reset";
+@import "form";
+@import "_layout";
+//@font-face {
+//  font-family: 'NeuesBauenDemo';
+//  src: url('../fonts/neues_bauen_demo-webfont.eot');
+//  src: url('../fonts/neues_bauen_demo-webfont.eot?#iefix') format('embedded-opentype'),
+//  url('../fonts/neues_bauen_demo-webfont.woff') format('woff'),
+//  url('../fonts/neues_bauen_demo-webfont.ttf') format('truetype'),
+//  url('../fonts/neues_bauen_demo-webfont.svg#NeuesBauenDemo') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//usually use class
+h1,h2,h3,h4,h5{
+  font-weight: 600;
+}
+h1, .h1 {
+  font-size: 1.1rem;
+  margin:1rem 0;
+}
+
+h2, h2{
+  font-size: 1rem;
+  margin:.9rem 0;
+}
+
+h3, .h3 {
+  font-size: .9rem;
+  margin:.75rem 0;
+}
+
+h4, .h4 {
+  font-size: .8rem;
+  margin:.6rem 0;
+}
+
+h5, .h5 {
+  font-size: .7rem;
+  margin:.5rem 0;
+}
+.fl,.fr{*display: inline;}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.list-none{
+  @include ul-reset;
+}
+.clearfix{
+  @include clear-float;
+}
+.show{
+  display:block !important;
+}
+.hide{
+  display:none !important;
+}
+/*text style*/
+.single-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: left;
+}
+.text-gray {
+  color: #666;
+}
+.mark-primary {
+  background-color: #fff;
+}
+.text-bold {
+  font-weight: 600 !important;
+}
+.text-danger {
+  color: #f00 !important;
+}
+.text-success {
+  color: #009966 !important;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+button:disabled,input[type=button]:disabled,input[type=submit]:disabled{
+  cursor:not-allowed;
+}
+//content css
+body{
+  font:$font-size/1 Roboto,Microsoft Yahei,\\82F9\65B9,Tahoma,\\9ED1\4F53,Arial,\\5B8B\4F53
+}

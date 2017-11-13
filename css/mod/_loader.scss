@@ -1,0 +1,138 @@
+@import "mixin";
+.page-loader{
+  $wh:100%;
+  width:$wh;
+  height:$wh;
+  position:fixed;
+  left:0;
+  top:0;
+  background-color: #fff;
+  z-index:99999;
+}
+@-webkit-keyframes rotate {
+  0%{
+    @include transform-all(rotate(0deg));
+  }
+  25%{
+    @include transform-all(rotate(90deg));
+  }
+  50%{
+    @include transform-all(rotate(180deg));
+  }
+  75%{
+    @include transform-all(rotate(270deg));
+  }
+  100%{
+    @include transform-all(rotate(360deg));
+  }
+}
+@-moz-keyframes rotate {
+  0%{
+    @include transform-all(rotate(0deg));
+  }
+  25%{
+    @include transform-all(rotate(90deg));
+  }
+  50%{
+    @include transform-all(rotate(180deg));
+  }
+  75%{
+    @include transform-all(rotate(270deg));
+  }
+  100%{
+    @include transform-all(rotate(360deg));
+  }
+}
+@-o-keyframes rotate {
+  0%{
+    @include transform-all(rotate(0deg));
+  }
+  25%{
+    @include transform-all(rotate(90deg));
+  }
+  50%{
+    @include transform-all(rotate(180deg));
+  }
+  75%{
+    @include transform-all(rotate(270deg));
+  }
+  100%{
+    @include transform-all(rotate(360deg));
+  }
+}
+@keyframes rotate {
+  0%{
+    @include transform-all(rotate(0deg));
+  }
+  25%{
+    @include transform-all(rotate(90deg));
+  }
+  50%{
+    @include transform-all(rotate(180deg));
+  }
+  75%{
+    @include transform-all(rotate(270deg));
+  }
+  100%{
+    @include transform-all(rotate(360deg));
+  }
+}
+.loader-section{
+  $wh:3rem;
+  width:$wh;
+  height:$wh;
+  position:relative;
+  top:42%;
+  margin:0 auto;
+  //@include transform-all(translate(0,-80%));
+  @include animation($animation:rotate 2s infinite linear)
+}
+@-webkit-keyframes bounce {
+  0%,100%{
+    @include transform-all(scale(0));
+  }
+  50%{
+    @include transform-all(scale(1))
+  }
+}
+@-moz-keyframes bounce {
+  0%,100%{
+    @include transform-all(scale(0));
+  }
+  50%{
+    @include transform-all(scale(1))
+  }
+}
+@-o-keyframes bounce {
+  0%,100%{
+    @include transform-all(scale(0));
+  }
+  50%{
+    @include transform-all(scale(1))
+  }
+}
+@keyframes bounce {
+  0%,100%{
+    @include transform-all(scale(0));
+  }
+  50%{
+    @include transform-all(scale(1))
+  }
+}
+.point-one,.point-two{
+  $wh:60%;
+  display:block;
+  width:$wh;
+  height:$wh;
+  margin:0 auto;
+  @include rounded-corner(100%);
+  @include animation($animation:bounce 2s infinite ease-in-out);
+}
+.point-one{
+  background-color: $theme-color;
+}
+.point-two{
+  background-color: $yellow;
+  margin-top:-20%;
+  @include animation-pro(delay,-1s);
+}
