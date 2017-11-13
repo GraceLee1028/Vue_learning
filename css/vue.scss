@@ -3,3 +3,17 @@ img{
   width:5rem;
   height:5rem;
 }
+.table{
+  width:100%;
+  border-collapse: collapse;
+  caption{
+    //display:none;
+  }
+  th,td,caption{
+    text-align: center;
+    border:1px solid $border-color
+  }
+}
+section{
+  margin-bottom:1rem;
+}

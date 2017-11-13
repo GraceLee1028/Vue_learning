@@ -7,7 +7,7 @@ $bg-opacity:.8;
   //height: $height;
   line-height: $line-height;
   font-size: $font-size;
-  padding: .3rem .6rem;
+  padding: .2rem .4rem;
   color:$color;
   border: 1px solid $border-color;
   @include radius($radius);
@@ -51,6 +51,11 @@ $bg-opacity:.8;
     color:$theme-color;
     background-color: #fff;
   }
+}
+.btn.disabled{
+  background-color:#bfb8b8;
+  color:#999;
+  cursor: not-allowed;
 }
 //input,select
 .form-control{
