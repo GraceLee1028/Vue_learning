@@ -15,8 +15,6 @@ $color:#333;
 $padding:.75rem;
 @import "mixin";
 @import "reset";
-@import "_layout";
-@import "form";
 //@font-face {
 //  font-family: 'NeuesBauenDemo';
 //  src: url('../fonts/neues_bauen_demo-webfont.eot');
@@ -54,6 +52,34 @@ h4, .h4 {
 h5, .h5 {
   font-size: .7rem;
   margin:.5rem 0;
+}
+.mt0 {margin-bottom: 0 !important;}
+.mt5{
+  margin-top: 5px !important;
+}
+.mt10{
+  margin-top: 10px !important;
+}
+.mt15{
+  margin-top: 15px !important;
+}
+.mt20{
+  margin-top: 20px !important;
+}
+.mr0 {
+  margin-left: 0 !important;
+}
+.mr5 {
+  margin-left: 5px !important;
+}
+.mr10 {
+  margin-left: 10px !important;
+}
+.mr15 {
+  margin-left: 15px !important;
+}
+.mr20 {
+  margin-left: 20px !important;
 }
 .fl,.fr{*display: inline;}
 .fl{
@@ -110,7 +136,12 @@ h5, .h5 {
 button:disabled,input[type=button]:disabled,input[type=submit]:disabled{
   cursor:not-allowed;
 }
+i, em {
+  font-style: normal;
+}
 //content css
+@import "form";
+@import "_layout";
 body{
   font:$font-size/1 Roboto,Microsoft Yahei,\\82F9\65B9,Tahoma,\\9ED1\4F53,Arial,\\5B8B\4F53
 }

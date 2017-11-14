@@ -70,6 +70,10 @@ const vm = new Vue({
             alert(`hello ${msg}`);
             alert(event.target.tagName);
             event.target.innerHTML = "单击了";
+        },
+        doThis(){
+            "use strict";
+            alert("点击中");
         }
     },
     computed:{

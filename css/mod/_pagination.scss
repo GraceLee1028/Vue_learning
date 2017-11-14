@@ -1,0 +1,53 @@
+/*分页样式----------------------start*/
+.pagination {
+  display: block;
+  vertical-align: middle;
+  *zoom: 1;
+}
+/*.pagination.center{position:relative;left:50%;margin-left: -50%;}*/
+.pagination{
+  @include clear-float;
+}
+.pagination a, .pagination span {
+  display: inline-block;
+  padding: 6px 12px;
+  color: #333;
+  border-top: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.pagination a.prev, .pagination a:first-child,
+.pagination span.prev, .pagination span:first-child {
+  border-left: 1px solid #dddddd;
+  border-top-left-radius: 3px;
+  -webkit-border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+}
+
+.pagination a.next, .pagination a:last-child,
+.pagination span.next, .pagination span:last-child {
+  border-right: 1px solid #dddddd;
+  border-top-right-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+}
+
+.pagination a:hover, .pagination .prev:hover, .pagination .next:hover {
+  background-color: #dedede;
+  text-decoration: none;
+}
+.pagination span{cursor: not-allowed;}
+.pagination a.current, .pagination span.current {
+  background-color: #1e202c;
+  color: #fff;
+  border-color: #1e202c;
+}
+
+.pagination .current.prev, .pagination .current.next {
+  color: #999;
+  background: #fff;
+  border-color: #ddd;
+}
