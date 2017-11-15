@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="../css/vue.css">
+    <script src="../vueJs/component.js"></script>
 </head>
 <body>
 <main  id="content">
@@ -21,6 +22,7 @@
         <li><a href="#arr">数组渲染，对象数组渲染，for-in,for-of</a></li>
         <li><a href="#arrUpdate">数组更新</a></li>
         <li><a href="#eventDemo">事件示例</a></li>
+        <li><a href="#vModel">v-model绑定</a></li>
     </ol>
     <section>
         <p id="Mustache">1、{{content}}</p>
@@ -79,6 +81,7 @@
             <span :style="[red,rotation]">调试成功，马上关闭</span>
         </p>
         <p id="component">8、组件：</p>
+        <strong>component: 注意确保在初始化根实例之前注册组件</strong>
         <!--<my-component class="baz boo"></my-component>-->
         <h3 id="condition">9、条件渲染：v-if:只有当开始为真的时候，才会渲染</h3>
         <button type="button" @click="toggleResult">切换成功失败</button>
@@ -217,9 +220,55 @@
             <h5>按键修饰符</h5>
             <input type="button" v-on:keyup.enter="doThis" value="enter">
         </p>
+        <p id="vModel">
+            <h3>v-model 表单输入绑定</h3>
+            <h5>文本框</h5>
+            <p class="pre-line">名字：{{userName}}</p>
+            <input placeholder="your name" v-model.trim="userName">
+            <h5>textarea框</h5>
+            <p class="pre-line">备注：{{note}}</p>
+            <textarea placeholder="please write your note" v-model="note"></textarea>
+            <h5>复选框</h5>
+            <p class="pre-line">爱好：{{cbxFav}}</p>
+            <label>爱好：</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="电影" v-model="cbxFav">电影</label>
+                <label><input type="checkbox" value="旅游" v-model="cbxFav">旅游</label>
+                <label><input type="checkbox" value="徒步" v-model="cbxFav">徒步</label>
+                <label><input type="checkbox" value="唱歌" v-model="cbxFav">唱歌</label>
+                <label><input type="checkbox" value="high" v-model="cbxFav">high</label>
+                <label><input type="checkbox" value="跑步" v-model="cbxFav">跑步</label>
+            </div>
+            <p>true-value:{{trueVal}},false-value:{{falseVal}},sex:{{sexStr}}</p>
+            <label><input type="checkbox" v-model="sexStr" :true-value="trueVal" :false-value="falseVal">男生？</label>
+            <h5>选择框</h5>
+            <p class="pre-line">备注：{{cbxFav}}</p>
+            <label>爱好：</label>
+            <p>选择一：{{favSelect}}</p>
+            <select v-model="favSelect">
+                <option>请选择你的爱好</option>
+                <option v-for="item of cbxFav">
+                    {{item}}
+                </option>
+            </select>
+            <p>选择二：：{{favSelect1}}</p>
+            <select v-model="favSelect1">
+                <option selected>请选择你的爱好2</option>
+                <option v-for="item of cbxFav" :value="item">
+                    {{item}}
+                </option>
+            </select>
+            <p>选择三：：{{favSelect2}}</p>
+            <select v-model="favSelect2" multiple>
+                <option selected>请选择你的爱好3</option>
+                <option v-for="item of cbxFav" :value="item">
+                    {{item}}
+                </option>
+            </select>
+            </p>
     </section>
 </main>
 </body>
 <script src="../plugins/vue.js"></script>
-<script src="../vueJs/1.js?1113001"></script>
+<script src="../vueJs/1.js?1114"></script>
 </html>

@@ -40,7 +40,15 @@ const vm = new Vue({
             "address":"深大",
             "tel":"400-1345236"
         },
-        grade:[88,77,68,86,92,75]
+        grade:[88,77,68,86,92,75],
+        note:"",
+        cbxFav:[],
+        favSelect:"",
+        favSelect1:"",
+        favSelect2:[],
+        trueVal:"男",
+        falseVal:"女",
+        sexStr:"男"
     },
     methods:{
         toggleSex:function(){
