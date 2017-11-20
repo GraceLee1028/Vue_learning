@@ -1,0 +1,23 @@
+{
+  "name": "vue_learning",
+  "version": "1.0.1",
+  "description": "vue grammer basic",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifengand1992/Vue_learning.git"
+  },
+  "author": "lea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lifengand1992/Vue_learning/issues"
+  },
+  "homepage": "https://github.com/lifengand1992/Vue_learning#readme"
+}

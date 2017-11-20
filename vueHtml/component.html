@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <link rel="stylesheet" href="../css/vue.css">
+</head>
+<body>
+<main id="component">
+    <h1>{{title}}</h1>
+    <ol>
+        <li><a href="#global">全局组件</a></li>
+        <li><a href="#local">局部组件</a></li>
+        <li><a href="#group">组件组合</a></li>
+        <li><a href="#dataFlow">数据流</a></li>
+    </ol>
+    <section id="global">
+        <h4 class="title-small">全局组件</h4>
+        <my-global></my-global>
+    </section>
+    <section id="local">
+        <h4 class="title-small">全局组件</h4>
+        <my-local></my-local>
+    </section>
+    <section id="group">
+        <h4 class="title-small">全局组件</h4>
+        <p>形成父子组件的关系：组件 A 在它的模板中使用了组件 B。<br>
+            它们之间必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告知父组件。<br>
+            然而，通过一个良好定义的接口来尽可能将父子组件解耦也是很重要的。这保证了每个组件的代码可以在相对隔离<br>
+            的环境中书写和理解，从而提高了其可维护性和复用性。<br>
+            在 Vue 中，<strong>父子组件的关系可以总结为 prop 向下传递，事件向上传递。</strong><br>
+            父组件通过 prop 给子组件下发数据，子组件通过事件给父组件发送消息。看看它们是怎么工作的。</p>
+        <h5>1、使用 Prop 传递数据</h5>
+        <p>组件实例的作用域是孤立的。这意味着不能 (也不应该) 在子组件的模板内直接引用父组件的数据。<br>父组件的数据需要通过 prop 才能下发到子组件中。</p>
+        <child-title title="给子组件传入内容"></child-title>
+        <p>你是小明？</p>
+        <child-value data-value="我是小明"></child-value>
+        <h5>2、动态props</h5>
+        <p>123456</p>
+        <input type="text" v-model="pwd">
+        <password :pwd="pwd"></password>
+        <h5>3、把一个对象的所有属性作为 prop 进行传递，使用v-bind</h5>
+        <info v-bind="userInfo"></info>
+        <strong>v-bind:如果要传递真正的数值就可以使用v-bind</strong>
+    </section>
+    <section id="dataFlow">
+        <h4 class="title-small">数据流</h4>
+
+    </section>
+</main>
+</body>
+<script src="../plugins/vue.js"></script>
+<script src="../vueJs/component.js"></script>
+</html>

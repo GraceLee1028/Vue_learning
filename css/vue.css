@@ -343,4 +343,9 @@ img {
 section {
   margin-bottom: 1rem; }
 
+.title-small {
+  border-left: 4px solid #009688;
+  padding: 10px 15px;
+  background-color: #eee; }
+
 /*# sourceMappingURL=vue.css.map */
