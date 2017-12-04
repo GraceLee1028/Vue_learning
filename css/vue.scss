@@ -1,4 +1,6 @@
 @import "mod/common";
+$green:#009688;
+$gray:#b2b2b2;
 img{
   width:5rem;
   height:5rem;
@@ -18,7 +20,16 @@ section{
   margin-bottom:1rem;
 }
 .title-small {
-  border-left: 4px solid #009688;
+  border-left: 4px solid $green;
   padding: 10px 15px;
   background-color: #eee;
+}
+.gray{
+  color:$gray;
+}
+.success{
+  color:$green !important;
+}
+.error{
+  color:red !important;
 }

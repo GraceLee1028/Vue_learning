@@ -13,6 +13,8 @@
         <li><a href="#local">局部组件</a></li>
         <li><a href="#group">组件组合</a></li>
         <li><a href="#dataFlow">数据流</a></li>
+        <li><a href="#propertyDeal">属性合并</a></li>
+        <li><a href="#eventOwn">自定义事件</a></li>
     </ol>
     <section id="global">
         <h4 class="title-small">全局组件</h4>
@@ -45,7 +47,31 @@
     </section>
     <section id="dataFlow">
         <h4 class="title-small">数据流</h4>
-
+        <!--<p>1、Prop 作为初始值传入后，子组件想把它当作局部数据来用；</p>-->
+        <!--<child-one initialCounter="1"></child-one>-->
+        <!--<p>Prop 作为原始数据传入，由子组件处理成其它数据输出。</p>-->
+        <!--<child-two initialCounter="1"></child-two>-->
+    </section>
+    <section id="dataValidate">
+        <h4 class="title-small">props验证</h4>
+    </section>
+    <section id="propertyDeal">
+        <h4 class="title-small">属性合并/替换</h4>
+        <h5>class 合并</h5>
+        <text-tip txt="置灰"></text-tip>
+        <text-tip txt="成功" class="success"></text-tip>
+        <text-tip txt="失败" class="error"></text-tip>
+        <h5>style 合并<strong>相同样式时：父组件style样式会覆盖子组件的style样式</strong></h5>
+        <text-tip txt="置灰" style="color:#999;background-color: #b2b2b2;"></text-tip>
+        <text-tip txt="成功" style="color:#fff;background-color: #009966;"></text-tip>
+        <text-tip txt="失败" style="color:#fff;background-color:red;"></text-tip>
+    </section>
+    <section id="eventOwn">
+        <h4 class="title-small">自定义事件</h4>
+        <p>使用 $on(eventName) 监听事件<br>
+            使用 $emit(eventName) 触发事件</p>
+        <p>{{ total }}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
     </section>
 </main>
 </body>

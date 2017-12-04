@@ -348,4 +348,13 @@ section {
   padding: 10px 15px;
   background-color: #eee; }
 
+.gray {
+  color: #b2b2b2; }
+
+.success {
+  color: #009688 !important; }
+
+.error {
+  color: red !important; }
+
 /*# sourceMappingURL=vue.css.map */

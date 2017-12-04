@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<main  id="animation">
+    <ol>
+        <li><a href="#global">全局组件</a></li>
+    </ol>
+    <section id="global">
+        <h4 class="title-small">transition</h4>
+        <div id="demo">
+            <button v-on:click="show = !show">
+                Toggle
+            </button>
+            <transition name="fade">
+                <p v-if="show">hello</p>
+            </transition>
+        </div>
+    </section>
+</main>
+</body>
+<script src="../plugins/vue.js"></script>
+</html>

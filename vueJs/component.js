@@ -9,6 +9,51 @@ Vue.component('my-global', {
         return {msg: "A global component"};
     }
 });
+Vue.component('button-counter', {
+    template: '<button v-on:click="incrementCounter">{{ counter }}</button>',
+    data: function () {
+        return {
+            counter: 0
+        }
+    },
+    methods: {
+        incrementCounter: function () {
+            this.counter += 1;
+            this.$emit('increment')
+        }
+    }
+});
+Vue.component('example', {
+    props: {
+        // 基础类型检测 (`null` 指允许任何类型)
+        propA: Number,
+        // 可能是多种类型
+        propB: [String, Number],
+        // 必传且是字符串
+        propC: {
+            type: String,
+            required: true
+        },
+        // 数值且有默认值
+        propD: {
+            type: Number,
+            default: 100
+        },
+        // 数组/对象的默认值应当由一个工厂函数返回
+        propE: {
+            type: Object,
+            default: function () {
+                return { message: 'hello' }
+            }
+        },
+        // 自定义验证函数
+        propF: {
+            validator: function (value) {
+                return value > 10
+            }
+        }
+    }
+});
 const child = {
     template: '<div>A local component!</div>'
 };
@@ -20,9 +65,15 @@ const vm = new Vue({
         userInfo:{
             name:'lea',
             pwd:'123'
+        },
+        total:0
+    },
+    methods: {
+        incrementTotal: function () {
+            this.total += 1
         }
     },
-    components:{
+    components:{//局部组件
         "my-local":child,
         "child-title":{
             props:["title"],
@@ -39,6 +90,10 @@ const vm = new Vue({
         "info":{
             props:["name","pwd"],
             template:'<strong>姓名：{{name}}<br>密码：{{pwd}}</strong>'
+        },
+        "text-tip":{//属性合并
+            props:["txt"],
+            template:'<span class="gray" style="color:#333;">{{txt}}</span>'
         }
     }
 });
