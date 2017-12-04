@@ -19,7 +19,7 @@ Vue.component('button-counter', {
     methods: {
         incrementCounter: function () {
             this.counter += 1;
-            this.$emit('increment')
+            this.$emit('increment');//子组件的点击事件触发父组件的事件
         }
     }
 });
@@ -69,7 +69,7 @@ const vm = new Vue({
         total:0
     },
     methods: {
-        incrementTotal: function () {
+        incrementTotal: function () {//父组件事件
             this.total += 1
         }
     },
