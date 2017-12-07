@@ -11,7 +11,8 @@
     <p>v-once:当数据改变时，插值处的内容不会更新</p>
     <span v-once>{{msg}}</span>
     <p>v-html:</p>
-    {{tipHtml}}
+    {{{tipHtml}}}
+    <p v-html="tipHtml"></p>
 </section>
 </body>
 <script src="../plugins/vue.js"></script>
