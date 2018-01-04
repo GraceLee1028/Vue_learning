@@ -352,7 +352,10 @@ section {
   color: #b2b2b2; }
 
 .success {
-  color: #009688 !important; }
+  color: #009688; }
+  .success.disabled {
+    color: #999999;
+    cursor: not-allowed; }
 
 .error {
   color: red !important; }

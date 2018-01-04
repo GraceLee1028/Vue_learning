@@ -28,7 +28,11 @@ section{
   color:$gray;
 }
 .success{
-  color:$green !important;
+  color:$green;
+  &.disabled{
+    color:#999999;
+    cursor:not-allowed;
+  }
 }
 .error{
   color:red !important;

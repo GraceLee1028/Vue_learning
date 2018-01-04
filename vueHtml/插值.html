@@ -7,12 +7,16 @@
 </head>
 <body>
 <section id="content">
+    插值:
     <p id="Mustache">{{msg}}</p>
+    v-once:
     <p>v-once:当数据改变时，插值处的内容不会更新</p>
     <span v-once>{{msg}}</span>
-    <p>v-html:</p>
-    {{{tipHtml}}}
-    <p v-html="tipHtml"></p>
+    <br>
+    v-text：
+    <span v-text="tipHtml"></span><br>
+    原始 HTML:v-html指令
+    <span v-html="tipHtml"></span>
 </section>
 </body>
 <script src="../plugins/vue.js"></script>
@@ -24,6 +28,5 @@
             tipHtml: "<b>小心点，明天</b>"
         }
     });
-    vm.msg = "changed hello";
 </script>
 </html>
