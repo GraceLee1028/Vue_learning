@@ -358,6 +358,17 @@ section {
     cursor: not-allowed; }
 
 .error {
-  color: red !important; }
+  color: red !important;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: transform 0.3s linear;
+  -moz-transition: transform 0.3s linear;
+  -ms-transition: transform 0.3s linear;
+  -o-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transform-origin: center; }
 
 /*# sourceMappingURL=vue.css.map */
