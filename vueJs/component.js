@@ -97,3 +97,6 @@ const vm = new Vue({
         }
     }
 });
+const vm2 = new Vue({
+    el:"#com2"
+});

@@ -101,5 +101,8 @@ var vm = new Vue({
         }
     }
 });
+var vm2 = new Vue({
+    el: "#com2"
+});
 
 //# sourceMappingURL=component-compiled.js.map

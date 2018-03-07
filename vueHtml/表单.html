@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <link rel="stylesheet" href="../css/vue.css">
+</head>
+<body>
+<section id="content">
+    <h2>表单</h2>
+    <section>
+        <h3>复选框checkbox</h3>
+        <p>【单个】通过true和false的值</p>
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+        <p>【单个】通过value值来进行选中时，也要把选中的值当做数组来处理</p>
+        <input type="checkbox" id="checkbox1" value="test" v-model="checked1">
+        <label for="checkbox">{{ checked1 }}</label>
+        <h4>【多个】</h4>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+        <h3>单选框radio</h3>
+        <p>【单个】通过value值默认选中</p>
+        <input type="radio" id="radio" value="男" v-model="checked0">
+        <label for="radio">{{ checked0 }}</label>
+        <p>【多个】通过value值默认选中【男，女】</p>
+        <input type="radio" id="man" value="男" v-model="sex">
+        <label for="man">男</label>
+        <input type="radio" id="woman" value="女" v-model="sex">
+        <label for="woman">女</label>
+        <p>你选择的性别为：{{sex}}</p>
+    </section>
+    <section>
+        <h3>文本框框</h3>
+        <p>【单行】input</p>
+        <div>
+            <input type="text" v-model="userName">
+            <label>姓名：{{userName}}</label>
+        </div>
+        <p>【多行文本】textarea:在文本区域插值 (&lt;textarea&gt;&lt;/textarea&gt;) 并不会生效，应用 v-model 来代替。</p>
+        <div>
+            <textarea v-model="address"></textarea>
+            <label>地址：{{address}}</label>
+        </div>
+    </section>
+    <section>
+        <h3>选择框</h3>
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>选中的值: {{ selected }}</span>
+    </section>
+    <section>
+        <h3>修饰符</h3>
+        <h4>lazy:change时改变</h4>
+        <input type="text" v-model.lazy="tel">
+        <p>电话号码：{{tel}}</p>
+        <h4>number:可以转换的就转换为number类型，不能转换的就返回原值</h4>
+        <input type="text" v-model.number="tel1">
+        <p>电话号码：{{tel1}}</p>
+        <h4>trim:清除前后空格</h4>
+        <input type="text" v-model.trim="tel2">
+        <p>电话号码：{{tel2}}</p>
+    </section>
+</section>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#content",
+        data: {
+            //复选框
+            checked:false,
+            checked1:["test"],
+            checkedNames:[],
+            //单选框
+            checked0:"男",
+            sex:"",
+            //文本框
+            userName:"",
+            address:"",
+            //选择框
+            selected:"",
+            //修饰符
+            tel:"",
+            tel1:"",
+            tel2:""
+        }
+    });
+</script>
+</html>
