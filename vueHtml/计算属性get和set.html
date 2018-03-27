@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性get和set</title>
+</head>
+<body>
+<div id="section">
+    <p>{{msg}}</p>
+    <p>{{reverseMsg}}</p>
+    {{helloNow}}
+    <button type="button" @click="update">修改打招呼的方式</button>
+</div>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            msg:"hello",
+            name:"Anna"
+        },
+        methods:{
+            update:function(){
+                this.helloNow = "你好，你好呀";
+            }
+        },
+        computed:{
+            //get方法
+            reverseMsg:function(){
+                return this.msg.split("").reverse().join("");
+            },
+            helloNow:{
+                //get方法
+                helloNow:function(){
+                    return this.name+"，你好！";
+                },
+                set:function(str){
+                    alert("对该计算属性进行了set[赋值]操作");
+                }
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            width:100%;
+            border-collapse: collapse;
+        }
+        table,table td{
+            border:1px solid #000;
+        }
+        table td{
+            padding:5px 10px;
+        }
+        .even{
+            background-color: #ededed;
+        }
+        .has-po{
+            background-color: brown;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<section id="userInfo">
+    <h3>数据的添加和删除</h3>
+    <form>
+        <fieldset>添加学生信息</fieldset>
+        <div>
+            <label>姓名：</label>
+            <input type="text" v-model="username" placeholder="请输入姓名">
+        </div>
+        <div>
+            <label>年龄：</label>
+            <input type="text" v-model="age" placeholder="请输入年龄">
+        </div>
+        <div>
+            <label>性别：</label>
+            <label><input type="radio" value="0" v-model="sex">男</label>
+            <label><input type="radio" value="1" v-model="sex">女</label>
+        </div>
+        <div>
+            <label>爱好：</label>
+            <label><input type="checkbox" value="看电影" v-model="fav">看电影</label>
+            <label><input type="checkbox" value="游泳" v-model="fav">游泳</label>
+            <label><input type="checkbox" value="看书" v-model="fav">看书</label>
+            <!--<span>{{fav}}</span>-->
+        </div>
+        <div>
+            <label>职位：</label>
+            <select v-model="position">
+                <option value="0">学生</option>
+                <option value="1">班长</option>
+                <option value="2">数学代表</option>
+                <option value="3">语文代表</option>
+            </select>
+        </div>
+        <button type="button" @click="submit">提交</button>
+    </form>
+    <table cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>爱好</th>
+            <th>职位</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(user,index) in userInfo" :class="[index%2==0?'even':'',user.position!='0'?'has-po':'']">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.sex==0?"男":"女"}}</td>
+            <td>{{user.fav}}</td>
+            <td>{{posTxt(user.position)}}</td>
+            <td><button type="button" @click="deleteOne">删除</button></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#userInfo",
+        data:{
+            username:"",
+            sex:0,
+            fav:[],
+            position:0,
+            age:18,
+            userInfo:[
+                {name:"张三",age:19,sex:0,fav:"",position:"0"},
+                {name:"李四",age:29,sex:1,fav:"",position:"0"},
+                {name:"王五",age:49,sex:0,fav:"",position:"0"},
+                {name:"贾六",age:46,sex:0,fav:"",position:"0"},
+                {name:"小二",age:25,sex:1,fav:"",position:"0"}
+            ]
+        },
+        methods:{
+            posTxt:function(pos){
+                let posTxt;
+                pos = parseInt(pos);
+                switch (pos){
+                    case 0:
+                        posTxt = "学生";
+                        break;
+                    case 1:
+                        posTxt = "班长";
+                        break;
+                    case 2:
+                        posTxt = "数学代表";
+                        break;
+                    case 3:
+                        posTxt = "语文代表";
+                        break;
+                }
+                return posTxt;
+            },
+            submit:function(){
+                console.log(this.fav);
+                this.userInfo.unshift({
+                    name:this.username,
+                    age:this.age,
+                    sex:this.sex,
+                    fav:this.fav.join(","),
+                    position:this.position
+                });
+            },
+            deleteOne:function(ev){
+                let target =ev.target;
+                console.log(ev);
+                console.log(target);
+                let _tr = target.parentNode.parentNode;
+                console.log(target);
+                let _tbody = _tr.parentNode;
+                _tbody.removeChild(_tr);
+            }
+        },
+        computed:{
+
+        }
+    });
+</script>
+</html>

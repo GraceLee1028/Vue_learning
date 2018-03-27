@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on事件</title>
+</head>
+<body>
+<div id="section">
+    {{msg}}
+    <button v-on:click="changeHello">完成</button>
+    <button @click="changeBg" :style="{backgroundColor:bgBtn}">完成</button>
+</div>
+</body>
+<script src="../plugins/vue.js"></script>
+<script type="text/javascript">
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            msg:'等一会',
+            bgBtn:"#fff"
+        },
+        methods:{
+            changeHello:function(){
+                this.msg = "该你了";
+            },
+            changeBg:function(){
+                this.bgBtn = "red";
+            }
+        }
+    })
+</script>
+</html>
