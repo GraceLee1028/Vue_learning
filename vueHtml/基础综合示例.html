@@ -27,37 +27,39 @@
 <section id="userInfo">
     <h3>数据的添加和删除</h3>
     <form>
-        <fieldset>添加学生信息</fieldset>
-        <div>
-            <label>姓名：</label>
-            <input type="text" v-model="username" placeholder="请输入姓名">
-        </div>
-        <div>
-            <label>年龄：</label>
-            <input type="text" v-model="age" placeholder="请输入年龄">
-        </div>
-        <div>
-            <label>性别：</label>
-            <label><input type="radio" value="0" v-model="sex">男</label>
-            <label><input type="radio" value="1" v-model="sex">女</label>
-        </div>
-        <div>
-            <label>爱好：</label>
-            <label><input type="checkbox" value="看电影" v-model="fav">看电影</label>
-            <label><input type="checkbox" value="游泳" v-model="fav">游泳</label>
-            <label><input type="checkbox" value="看书" v-model="fav">看书</label>
-            <!--<span>{{fav}}</span>-->
-        </div>
-        <div>
-            <label>职位：</label>
-            <select v-model="position">
-                <option value="0">学生</option>
-                <option value="1">班长</option>
-                <option value="2">数学代表</option>
-                <option value="3">语文代表</option>
-            </select>
-        </div>
-        <button type="button" @click="submit">提交</button>
+        <fieldset>
+            <legend>添加学生信息</legend>
+            <div>
+                <label>姓名：</label>
+                <input type="text" v-model="username" placeholder="请输入姓名">
+            </div>
+            <div>
+                <label>年龄：</label>
+                <input type="text" v-model="age" placeholder="请输入年龄">
+            </div>
+            <div>
+                <label>性别：</label>
+                <label><input type="radio" value="0" v-model="sex">男</label>
+                <label><input type="radio" value="1" v-model="sex">女</label>
+            </div>
+            <div>
+                <label>爱好：</label>
+                <label><input type="checkbox" value="看电影" v-model="fav">看电影</label>
+                <label><input type="checkbox" value="游泳" v-model="fav">游泳</label>
+                <label><input type="checkbox" value="看书" v-model="fav">看书</label>
+                <!--<span>{{fav}}</span>-->
+            </div>
+            <div>
+                <label>职位：</label>
+                <select v-model="position">
+                    <option value="0">学生</option>
+                    <option value="1">班长</option>
+                    <option value="2">数学代表</option>
+                    <option value="3">语文代表</option>
+                </select>
+            </div>
+            <button type="button" @click="submit">提交</button>
+        </fieldset>
     </form>
     <table cellspacing="0" cellpadding="0">
         <thead>

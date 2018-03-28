@@ -22,21 +22,22 @@
         },
         methods:{
             update:function(){
-                this.helloNow = "你好，你好呀";
+                this.helloNow = "嬴政，你好呀";
             }
         },
         computed:{
-            //get方法
+            //get方法【一个方法时，默认为get方法】
             reverseMsg:function(){
                 return this.msg.split("").reverse().join("");
             },
             helloNow:{
                 //get方法
-                helloNow:function(){
+                get:function(){
                     return this.name+"，你好！";
                 },
                 set:function(str){
                     alert("对该计算属性进行了set[赋值]操作");
+                    this.name = str.split("，")[0];
                 }
             }
         }

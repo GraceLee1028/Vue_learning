@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件</title>
+</head>
+<body>
+<section id="section">
+    <img-des></img-des>
+</section>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    //子组件构造器1
+    let Profile1 = Vue.extend({
+        template:`<div><h1>婚纱</h1><img :src="srcImg" width="200"/></div>`,//必须是一个父元素包裹起来的
+        data:function(){//在此处的data必须是函数
+            return {
+                srcImg:"../imgs/cloth.png"
+            }
+        }
+    });
+    //子组件构造器2
+    let Profile2 = Vue.extend({
+        template:`<p>2018年兰玉设计的婚纱</p>`
+    });
+    //注册父组件[template:参数必须]
+    Vue.component("img-des",{
+        components:{
+            'img-title':Profile1,
+            'description':Profile2
+        },
+        template:`
+        <div class="text-center">
+        <img-title></img-title>
+        <description></description>
+        </div>
+        `
+    });
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+
+        }
+    })
+</script>
+</html>

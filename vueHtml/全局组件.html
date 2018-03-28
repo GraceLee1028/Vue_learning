@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+</head>
+<body>
+<section id="section">
+    <my-day></my-day>
+</section>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    //创建组件构造器【参数为：一个包含组件选项的对象。】
+    let Profile = Vue.extend({
+        template:`<div>{{name}},天气真好!!!</div>`,
+        data:function(){//在此处的data必须是函数
+            return {
+                name:"安娜"
+            }
+        }
+    });
+    //注册全局组件
+    Vue.component("my-day",Profile);
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+
+        }
+    })
+</script>
+</html>
