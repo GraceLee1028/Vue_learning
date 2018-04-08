@@ -1,0 +1,11 @@
+@import "mixin";
+body,html{
+  width:100%;
+  height:100%;
+  overflow: auto;
+}
+/*header footer----------start*/
+.lea-container-fluid{
+  width:100%;
+  display:block;
+}

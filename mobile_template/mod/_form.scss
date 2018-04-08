@@ -1,0 +1,95 @@
+@import "mixin";
+/*form style start------------------*/
+.form-inline {
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .form-control {
+    width:200px;
+    &.fluid{
+      width:100%;
+    }
+  }
+  &.sm{
+    .form-control{
+      width:160px;
+    }
+  }
+}
+.form-horizontal,.form-inline{
+  &.sm{
+    .form-control{
+      @include h-radius($form-height-sm,$form-height-sm - 2px,$radius);
+    }
+  }
+  &.md{
+    .form-control{
+      @include h-radius($form-height-md,$form-height-md - 2px,$radius);
+    }
+  }
+}
+.form-control{
+  display: inline-block;
+  vertical-align: middle;
+  @include transition();
+  @include h-radius($form-height,$form-height - 2px,$radius);
+  color: $color;
+  width:100%;
+  border:1px solid $border-color;
+  font-size:14px;
+  padding:{
+    left: 10px;
+    right:10px;
+  }
+  &:focus{
+    border:1px solid $theme;
+  }
+}
+label{
+  font-weight: 500;
+}
+.input-group-addon{
+  .iconfont{
+    margin-right:5px;
+    font-weight: bold;
+  }
+}
+//checkbox radio
+input[type=checkbox]{
+  margin:0;
+}
+.checkbox input[type=checkbox],.checkbox input[type=radio]{
+  margin-top:1px;
+}
+.checkbox-inline input[type=checkbox],.checkbox input[type=radio]{
+  margin-top:1px;
+}
+/*button style end------------------*/
+.search-box{
+  $btn-w:66px;
+  width:608px;
+  padding-right: $btn-w - 1px;
+  position:relative;
+  .form-control{
+    @include radius(1px);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .tip-span{
+    display:inline-block;
+    width:64px;
+    background-color: $theme;
+    color:#fff;
+    text-align: center;
+    @include h-radius(22px,1px);
+    @include position($top:-22px,$left:0);
+  }
+  .btn{
+    width:$btn-w;
+    @include position($right:0,$top:0);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
