@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
     <title></title>
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
-
+<article id="cartBox">
+    <header class="header">
+        <h1 class="title"><i class="iconfont icon-left"></i>购物车</h1>
+    </header>
+    <main class="main">
+        <header class="main-tip">您正在安全购物环境中，请放心购物</header>
+        <div class="shop-content">
+            <section class="shop-item" v-for="shop in shopData">
+                <header class="si-header"><span class="title">京东自营</span><span class="tip">{{shop.preferential}}</span></header>
+                <div class="si-main clearfix">
+                    <div class="fl si-check"><input type="checkbox" :checked="shop.isChecked" @click=""></div>
+                    <div class="fl si-m-box">
+                        <a class="si-img" :href="shop.shopLink">
+                            <img :src="shop.imgSrc" alt="shop">
+                        </a>
+                    </div>
+                    <div class="fl si-other">
+                        <div class="si-name"><a class="link-theme-none">{{shop.poductName}}</a></div>
+                        <div class="price">{{shop.price | money}}<span class="money fr">{{shop.price*shop.num | money}}</span></div>
+                        <div class="deal">
+                            <div class="change-num fl"><i class="reduce" v-on:click="numDeal(shop,'reduce')">-</i>
+                                <input type="text" v-model="shop.num" disabled>
+                                <i class="add" v-on:click="numDeal(shop,'add')">+</i></div>
+                            <div class="delete fr" @click="deleteItem()">删除</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <label><input type="checkbox" :checked="isCheckAll" @click="checkAll(isCheckAll)">全选</label>
+        合计：<span>{{getAllMoney() | money}}</span>
+    </footer>
+</article>
 </body>
+<script src="../plugins/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+<script src="cart-compiled.js?04081645"></script>
 </html>

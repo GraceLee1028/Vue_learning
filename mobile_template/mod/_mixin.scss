@@ -204,7 +204,7 @@
   outline: none;
   @include box-shadow(none);
 }
-@include box-sizing($size:border-box){
+@include box-size($size:border-box){
   -webkit-box-sizing: $size;
   -moz-box-sizing: $size;
   box-sizing: $size;

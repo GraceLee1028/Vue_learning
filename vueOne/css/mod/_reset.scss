@@ -7,7 +7,7 @@ body {
   height: auto;
   background: #fff;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-*,*:before,*:after {@include box-sizing();}
+*,*:before,*:after {@include box-size();}
 .zeroMP, header,menu, section, footer, main, aside, nav, article, figure, html, body, p, address{
   margin: 0;
   padding: 0}

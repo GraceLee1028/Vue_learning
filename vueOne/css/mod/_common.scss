@@ -1,4 +1,8 @@
 @import "mixin";
+@import "reset";
+@import "form";
+@import "button";
+@import "layout";
 html{
   @include font-dpr(20px);
 }
@@ -15,7 +19,7 @@ html{
   html{  @include font-dpr(25.6px);  }
 }
 body{
-  font: 0.7rem/1 "Microsoft YaHei", Tahoma, Verdana, Arial, "Helvetica", "sans-serif";
+  font: 0.7rem/1 "Helvetica", "sans-serif", Tahoma, Verdana, Arial;
   color:$color;
 }
 .link{
