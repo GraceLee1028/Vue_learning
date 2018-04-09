@@ -6,14 +6,13 @@ let vm = new Vue({
     data:{
         shopData:[],
         itemNum:1,
-        isCheckAll:true
+        isCheckAll:false
     },
     mounted(){//组件加载完毕【数据请求，业务处理】
-        console.log("test");
         this.getShopData();
     },
     methods:{
-        getShopData(){
+        getShopData(){//获取数据
             this.$http.get('json/data.json').then(response => {
                 // get body data
                 this.shopData = response.body["sections"];
@@ -23,7 +22,7 @@ let vm = new Vue({
                 console.error(response);
             });
         },
-        numDeal(shop,type){
+        numDeal(shop,type){//加减
             if(type=="add"){
                 shop.num++;
             }else if(type=="reduce"){
@@ -34,22 +33,38 @@ let vm = new Vue({
                 }
             }
         },
-        deleteItem(){
-
+        deleteItem(shop){
+            let index = this.shopData.indexOf(shop);
+            this.shopData.splice(index,1);
         },
-        checkAll(checkVal){
+        checkAll(checkVal){//全选
             //全选取反
             this.isCheckAll = !checkVal;
             //所有商品处理
             this.shopData.map((item)=>{
-                if(typeof item.isChecked == "undifined"){
+                if(typeof item.isChecked == "undefined"){
                     this.$set(item,"isChecked",!checkVal);//给对象动态新增属性
                 }else{
                     item.isChecked = !checkVal;//给对象动态添加属性
                 }
             });
         },
-        getAllMoney:function(){
+        check(shop){//单选
+            if(typeof shop.isChecked == "undefined"){
+                this.$set(shop,"isChecked",true);//给对象动态新增属性
+            }else{
+                shop.isChecked = !shop.isChecked;
+            }
+            //所有商品处理
+            let isAll = true;
+            this.shopData.map((item)=>{
+                if(!item.isChecked){
+                    isAll = false;
+                }
+            });
+            this.isCheckAll = isAll;
+        },
+        getAllMoney:function(){//总价
             let all= 0;
             this.shopData.map((item)=>{
                 if(item.isChecked){
@@ -60,7 +75,7 @@ let vm = new Vue({
         }
     },
     computed:{
-        allMoney:function(){
+        test:function(){
 
         }
     },

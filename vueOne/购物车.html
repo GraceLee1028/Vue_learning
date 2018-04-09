@@ -20,7 +20,7 @@
             <section class="shop-item" v-for="shop in shopData">
                 <header class="si-header"><span class="title">京东自营</span><span class="tip">{{shop.preferential}}</span></header>
                 <div class="si-main clearfix">
-                    <div class="fl si-check"><input type="checkbox" :checked="shop.isChecked" @click=""></div>
+                    <div class="fl si-check"><input type="checkbox" :checked="shop.isChecked" @click="check(shop)"></div>
                     <div class="fl si-m-box">
                         <a class="si-img" :href="shop.shopLink">
                             <img :src="shop.imgSrc" alt="shop">
@@ -33,7 +33,7 @@
                             <div class="change-num fl"><i class="reduce" v-on:click="numDeal(shop,'reduce')">-</i>
                                 <input type="text" v-model="shop.num" disabled>
                                 <i class="add" v-on:click="numDeal(shop,'add')">+</i></div>
-                            <div class="delete fr" @click="deleteItem()">删除</div>
+                            <div class="delete fr" @click="deleteItem(shop)">删除</div>
                         </div>
                     </div>
                 </div>
@@ -43,6 +43,7 @@
     <footer class="footer">
         <label><input type="checkbox" :checked="isCheckAll" @click="checkAll(isCheckAll)">全选</label>
         合计：<span>{{getAllMoney() | money}}</span>
+        测试<span>{{test}}</span>
     </footer>
 </article>
 </body>
