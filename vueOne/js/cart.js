@@ -15,7 +15,7 @@ let vm = new Vue({
         getShopData(){//获取数据
             this.$http.get('json/data.json').then(response => {
                 // get body data
-                this.shopData = response.body["sections"];
+                this.shopData = response.body["sections"];//这里的this指向vm
                 console.log(this.shopData);
             }, response => {
                 // error callback
@@ -43,7 +43,7 @@ let vm = new Vue({
             //所有商品处理
             this.shopData.map((item)=>{
                 if(typeof item.isChecked == "undefined"){
-                    this.$set(item,"isChecked",!checkVal);//给对象动态新增属性
+                    this.$set(item,"isChecked",!checkVal);//给对象动态新增属性【动态更新】
                 }else{
                     item.isChecked = !checkVal;//给对象动态添加属性
                 }
