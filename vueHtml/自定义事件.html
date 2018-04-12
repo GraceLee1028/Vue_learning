@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义事件</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+使用 $on(eventName) 监听事件
+使用 $emit(eventName, optionalPayload) 触发事件
+<main  id="content">
+    在某个组件的根元素上监听一个原生事件<code>@click.native="callMe"</code>
+    <btn-num @sum-e="total" @click.native="callMe"></btn-num>
+    <btn-num @sum-e="total"></btn-num>
+    <btn-num @sum-e="total"></btn-num>
+    总的单击次数：{{this.counter}}
+</main>
+<template id="btnNum">
+    <p><button @click="add">加1</button>:{{this.num}}</p>
+</template>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#content",
+        data:{
+            counter:0
+        },
+        methods:{
+            total:function(){
+                this.counter+=1;
+            },
+            callMe:function(){
+                console.log("叫我");
+            }
+        },
+        components:{
+            "btnNum":{
+                template:"#btnNum",
+                data:function(){//必须为函数
+                    return {
+                        num:0
+                    }
+                },
+                methods:{
+                    add:function(){
+                        this.num++;
+                        this.$emit("sum-e");//此处注意，必须跟上面的事件名一一对应且【**-a*不能对应**A*】
+                    }
+                }
+            }
+        }
+    });
+</script>
+</html>

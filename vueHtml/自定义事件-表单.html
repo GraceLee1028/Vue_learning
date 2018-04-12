@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义事件-----表单</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<main id="content">
+    <custom-input name="姓名" v-model="username"></custom-input>
+</main>
+<template id="custom">
+    <div>
+        <label>{{name}}：</label>
+        <input rel="input" :vulue="value" id="user" @input="update($event.target.value)">
+    </div>
+</template>
+</body>
+<script src="../plugins/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#content",
+        data:{
+            username:"lea"
+        },
+        components:{
+            "customInput":{
+                template:"#custom",
+                props:["name","value"],
+                methods:{
+                    update:function(value){
+                        var val = value.replace(/\d./g,'');
+                        this.$emit('input',val)
+                    }
+                }
+            }
+        }
+    });
+</script>
+</html>
