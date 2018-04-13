@@ -43,3 +43,26 @@ section{
 .red {
   color: red;
 }
+@for $i from 1 through 3{
+  .error-#{$i}{
+    font-size:14px + $i*2;
+  }
+}
+@mixin red{
+  .red{
+    @content;
+  }
+}
+@include red{
+  .bold{
+    font-weight: 700;
+  }
+  color:red;
+}
+$num:3;
+@while $num > 1 {
+  .item-#{$num} {
+    margin-left: 20px;
+  }
+  $num: $num - 1;
+}

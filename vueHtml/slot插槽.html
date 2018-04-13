@@ -7,10 +7,11 @@
 <body>
 <section id="section">
     <h2>单个插槽</h2>
+    单个插槽
     <movie>
         <p>蛮喜欢的。</p>
     </movie>
-    <h2>局名插槽</h2>
+    <h2>具名插槽</h2>
     <film>
         <h1  slot="title">{{film.title}}</h1>
         <img  slot="img" :src="film.src" width="160">
@@ -18,6 +19,8 @@
         <p>你的影评是：</p>
         <p>蛮喜欢的。</p>
     </film>
+    <h2>作用域插槽</h2>
+
 </section>
 <template id="movie">
     <div>
