@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局、局部指令</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<main  id="content">
+    <input type="text" v-focus>
+    <input type="text" v-num value="fjsfjksd24klfte4234">
+</main>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //注册一个全局自定义指令【v-focus】
+    Vue.directive("focus",{
+        //当被注册的元素绑定到DOM中时。
+        inserted:function(el){
+            el.focus();
+        }
+    });
+    new Vue({
+        el:"#content",
+        data:{
+            
+        },
+        methods:{
+
+        },
+        components:{
+
+        },
+        //注册局部指令
+        directives:{
+            num:{
+                //当被注册的元素绑定到DOM时
+                inserted:function(el){
+                    el.value = el.value.replace(/[^\d]/g,'');
+                }
+            }
+        }
+    });
+</script>
+</html>

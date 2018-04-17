@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项合并</title>
+</head>
+<body>
+<main  id="content">
+    <h3>当组件和混入对象含有同名选项时，这些选项将以恰当的方式混合。</h3>
+    <h4>示例一：数据对象在内部会进行浅合并 (一层属性深度)，<br>
+        在和组件的数据发生冲突时以组件数据优先。</h4>
+    <p>结果：</p>
+    <img src="../../imgs/001.png">
+</main>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    var myMixin = {
+        data:function(){
+            return {
+                msg:'hello mixin',
+                name:'mixin混入',
+                sex:"man"
+            }
+        },
+        created:function(){
+            console.log("混入对象的钩子");
+        },
+        methods:{
+            hello:function(){
+                console.log('你好，混入');
+            },
+            where:function(){
+                console.log('在哪里？');
+            }
+        }
+    };
+    new Vue({
+        el:"#content",
+        mixins:[myMixin],//混入
+        //数据对象在内部会进行浅合并【在和组件的数据发生冲突时以组件数据优先】
+        data:function(){//test
+            return {
+                msg:'hello vue',
+                name:'vue中数据',
+                age:23
+            }
+        },
+        //同名钩子函数将混合为一个数组，因此都将被调用。另外，混入对象的钩子将在组件自身钩子之前调用。
+        created:function(){
+            console.log("组件内的钩子：");
+            console.log(this.$data);
+            this.hello();
+            this.where();
+            this.goWhere();
+        },
+        //值为对象的选项，例如 methods, components 和 directives，将被混合为同一个对象。
+        // 两个对象键名冲突时，取组件对象的键值对。
+        methods:{
+            hello:function(){
+                console.log('你好，组件');
+            },
+            goWhere:function(){
+                console.log('在组件');
+            }
+        }
+    });
+</script>
+</html>

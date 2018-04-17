@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡和动画【css动画】</title>
+    <style>
+        .bounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        .bounce-leave-active {
+            animation: bounce-in .5s reverse;//反向播放
+        }
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="section">
+    <h2>单元素/组件的css动画</h2>
+    <p>区别是在动画中 v-enter 类名在节点插入 DOM 后不会立即删除，而是在 animationend 事件触发时删除</p>
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="bounce">
+            <p v-if="show">
+                认识我。认识我。认识我。认识我。认识我。认识我。认识我。认识我。认识我。认识我。<br>
+                我。认识我。认识我。认识我。认识我。认识我认识我。认识我。认识我。认识我。认识我认识我。<br>
+                认识我。认识我。认识我。认识我.认识我。认识我。认识我。认识我认识我。认识我。认识我。认识我。认识我认识我。
+            </p>
+        </transition>
+    </div>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    new Vue({
+        el: '#section',
+        data: {
+            show: true
+        }
+    })
+</script>
+</html>

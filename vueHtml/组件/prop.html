@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prop传值</title>
+</head>
+<body>
+<section id="section">
+    <shop v-for="m in movies" :info="m"></shop>
+</section>
+<template id="temp">
+    <div>
+        <h1>{{info.title}}</h1>
+        <img :src="info.src" width="200">
+        <p>{{info.text}}</p>
+    </div>
+</template>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //注册全局组件
+    Vue.component("shop",{
+        template:"#temp",
+        props:["info"]
+    });
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            movies:[
+                {title:"你的名字",src:"../imgs/yourName.jpg",text:"请告诉我，你的名字"},
+                {title:"水形物语",src:"../imgs/water.JPEG",text:"当他看我的时候，就是看我原本的样子"},
+                {title:"大鱼海棠",src:"../imgs/fish.jpg",text:"人生是一场旅程。我们经历了几次轮回，才换来这个旅程。而这个旅程很短，因此不妨大胆一些，不妨大胆一些去爱一个人，去攀一座山，去追一个梦……有很多事我都不明白。但我相信一件事。上天让我们来到这个世上，就是为了让我们创造奇迹。"}
+            ]
+        }
+    })
+</script>
+</html>

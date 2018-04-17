@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传值</title>
+    <link rel="stylesheet" href="../../css/vue.css">
+</head>
+<body>
+<section id="propTest">
+    <h2>props传递数据</h2>
+    <my-child name="LiLi"></my-child>
+</section>
+<section id="propCamel">
+    <h2>props传递数据</h2>
+    <p>camelCase (驼峰式命名) 的 prop 需要转换为相对应的 kebab-case (短横线分隔式命名)</p>
+    <own-child my-name="Anne"></own-child>
+</section>
+<section id="propActive">
+    <h2>动态props传递数据</h2>
+    <input type="text" v-model="name" placeholder="请输入你的姓名">
+    <the-child v-bind:my-name="name"></the-child>
+</section>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //全局组件在实例之前
+    Vue.component("my-child",{
+        props:['name'],//声明props
+        //就像data一样，prop也可以在模板中使用。
+        template:"<span>你好，{{name}}</span>"
+    });
+    //实例
+    var vm = new Vue({
+        el:"#propTest"
+    });
+    //camel
+    Vue.component('own-child', {
+        // 在 JavaScript 中使用 camelCase
+        props: ['myName'],
+        template: '<span>很高兴见到你，{{ myName }}</span>'
+    });
+    var vm1 = new Vue({
+        el:"#propCamel",
+        name:"请输入你的姓名"
+    });
+    //动态
+    Vue.component('the-child', {
+        // 在 JavaScript 中使用 camelCase
+        props: ['myName'],
+        template: '<span>很高兴见到你，{{ myName }}</span>'
+    });
+    var vm2 = new Vue({
+        el:"#propActive",
+        data:{
+            name:""
+        }
+    });
+    (function(){
+    })();
+</script>
+</html>

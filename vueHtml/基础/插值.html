@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插值</title>
+    <link rel="stylesheet" href="../../css/vue.css">
+</head>
+<body>
+<section id="content">
+    插值:
+    <p id="Mustache">{{msg}}</p>
+    v-once:
+    <p>v-once:当数据改变时，插值处的内容不会更新</p>
+    <span v-once>{{msg}}</span>
+    <br>
+    v-text：
+    <span v-text="tipHtml"></span><br>
+    原始 HTML:v-html指令
+    <span v-html="tipHtml"></span>
+    <p v-html="colorHtml">表单来了</p>
+    <p v-text="colorHtml"></p>
+</section>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#content",
+        data: {
+            msg: "hello my lord",
+            tipHtml: "<b>小心点，明天</b>",
+            colorHtml:`<input type="color">
+            <input type="time">
+            <input type="datetime">
+            <input type="datetime-local">
+            <input type="tel">
+            `
+        }
+    });
+</script>
+</html>

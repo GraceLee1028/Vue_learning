@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on,$emit自定义事件【子组件修改父组件的数据】</title>
+</head>
+<body>
+<section id="section">
+    <p>您总共单击了<span>{{counterAll}}</span></p>
+    <btn v-on:counter="setCounter"></btn>
+    <btn v-on:counter="setCounter"></btn>
+    <btn v-on:counter="setCounter"></btn>
+    <btn v-on:counter="setCounter"></btn>
+</section>
+<template id="btn">
+    <div>
+        <p>你单击了{{counter}}</p>
+        <button @click="addCounter">单击</button>
+    </div>
+</template>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //组件
+    Vue.component("btn",{
+        template:"#btn",
+        data:function(){
+            return {
+                counter:0
+            }
+        },
+        methods:{
+            addCounter:function(){
+                this.counter+=1;
+                this.$emit("counter");
+            }
+        }
+    });
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            counterAll:0
+        },
+        methods:{
+            setCounter:function(){
+                this.counterAll++;
+            }
+        }
+    })
+</script>
+</html>

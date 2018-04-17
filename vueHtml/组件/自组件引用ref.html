@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组件引用ref</title>
+</head>
+<body>
+<div id="section">
+    <h3>尽管有 prop 和事件，但是有时仍然需要在 JavaScript 中直接访问子组件【使用 ref 为子组件指定一个引用 ID】</h3>
+    <user-info ref="userInfo"></user-info>
+    <p>$refs 只在组件渲染完成后才填充，并且它是非响应式的。它仅仅是一个直接操作子组件的应急方案——应当避免在模板或计算属性中使用 $refs。</p>
+    <button @click="hello">向子组件打招呼</button>
+    <p>尽管在 Vue 中渲染 HTML 很快，不过当组件中包含大量静态内容时，可以考虑使用 v-once 将渲染结果缓存起来</p>
+    <info></info>
+</div>
+<template id="info">
+    <div class="box" v-once>
+        <h3>姓名：浪费粮食</h3>
+        <p>退款成功，欢迎好评。退款成功，欢迎好评退款成功，欢迎好评退款成功，
+            欢迎好评退款成功，欢迎好评退款成功，欢迎好评退款成功，欢迎好评退款成功，
+            欢迎好评退款成功，欢迎好评退款成功，欢迎好评退款成功，欢迎好评退款成功，
+            欢迎好评退款成功，欢迎好评退款成功，欢迎好评</p>
+        <p>备注人：lea</p>
+    </div>
+</template>
+<template id="userInfo">
+    <div class="box">
+        <h3>姓名：浪费粮食</h3>
+        <p>退款成功，欢迎好评。</p>
+        <p>备注人：{{name}}</p>
+    </div>
+</template>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            currentView:"home"
+        },
+        methods:{
+          hello:function(){
+              console.log('你好，子组件');
+              console.log();
+              var child = this.$refs.userInfo;
+              console.log("子组件的数据：");
+              console.log(child.$data);
+          }
+        },
+        components:{
+            userInfo:{
+                template:"#userInfo",
+                data:function(){
+                    return {
+                        name:'lea'
+                    }
+                }
+            },
+            info:{
+                template:"#info"
+            }
+        }
+    });
+</script>
+</html>

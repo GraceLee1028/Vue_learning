@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽</title>
+</head>
+<body>
+<section id="section">
+    <h2>单个插槽</h2>
+    单个插槽
+    <movie>
+        <p>蛮喜欢的。</p>
+    </movie>
+    <h2>具名插槽</h2>
+    <film>
+        <h1  slot="title">{{film.title}}</h1>
+        <img  slot="img" :src="film.src" width="160">
+        <p slot="text">{{film.text}}</p>
+        <p>你的影评是：</p>
+        <p>蛮喜欢的。</p>
+    </film>
+    <h2>作用域插槽</h2>
+    <div>
+        <child class="child">
+            <!--具有特殊特性 slot-scope 的 <template> 元素必须存在，表示它是作用域插槽的模板-->
+            <template slot-scope="props">
+                <h2>个人信息</h2>
+                <span>{{ props.text }}</span>
+            </template>
+        </child>
+    </div>
+    <h3>作用域插件的经典示例：列表组件</h3>
+    <my-list>
+        <li slot="item" slot-scope="props">
+            <a :href="props.text.src">{{props.text.text}}</a>
+        </li>
+    </my-list>
+</section>
+<template id="movie">
+    <div>
+        <h1>{{movie.title}}</h1>
+        <img :src="movie.src" width="160">
+        <p>你的影评是：</p>
+        <slot></slot>
+    </div>
+</template>
+<template id="film">
+    <div>
+        <slot name="title"></slot>
+        <slot name="img"></slot>
+        <slot name="text"></slot>
+        <slot></slot>
+    </div>
+</template>
+<template id="child">
+    <div class="one">
+        <slot text="I'm lea,hello everybody!"></slot>
+    </div>
+</template>
+<template id="list">
+    <ul>
+        <slot name="item" v-for="item of items" :text="item"></slot>
+    </ul>
+</template>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //创建组件构造器【参数为：一个包含组件选项的对象。】
+    let Profile = Vue.extend({
+        template:"#movie",
+        data:function(){//在此处的data必须是函数
+            return {
+                movie:{title:"你的名字",src:"../imgs/yourName.jpg",text:"请告诉我，你的名字"}
+            }
+        }
+    });
+    //注册全局组件
+    Vue.component("movie",Profile);
+    Vue.component("film",{
+        template:"#film"
+    });
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            film:{title:"你的名字",src:"../imgs/yourName.jpg",text:"请告诉我，你的名字"}
+        },
+        components:{
+            child:{
+                template:"#child"
+            },
+            myList:{
+                template:"#list",
+                data:function(){
+                    return {
+                        items:[
+                            {text:'百度',src:"http:www.baidu.com"},
+                            {text:'谷歌',src:"http:www.google.com"}
+                        ]
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+</html>

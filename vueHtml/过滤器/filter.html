@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<main  id="content">
+    <div>{{money | float}}</div>
+    <div>{{age | int}}</div>
+</main>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    Vue.filter('int',function(value){
+        if (!value) return '';
+        return parseInt(value);
+    });
+    new Vue({
+        el:"#content",
+        data:{
+            age:23.000,
+            money:34
+        },
+        methods:{
+
+        },
+        components:{
+
+        },
+        filters: {
+            float: function (value) {
+                if (!value) return '';
+                console.log(parseFloat(value).toFixed(2));
+                return parseFloat(value).toFixed(2);
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["pager.js"],"names":[],"mappings":";;AAAA;;;AAGA,IAAI,QAAQ,IAAI,GAAJ,CAAQ;AAChB,MAAG;AADa,CAAR,CAAZ","file":"pager-compiled.js","sourcesContent":["/**\r\n * Created by SZ on 2018/4/9.\r\n */\r\nlet pager = new Vue({\r\n    el:\"#pagerContent\"\r\n});"]}

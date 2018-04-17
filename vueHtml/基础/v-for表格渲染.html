@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .hover{
+            background-color: #ededed;
+        }
+        .man{
+            color:red;
+        }
+        .woman{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+<section id="content">
+    <h3>某班学生信息</h3>
+    <table cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>联系方式</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(user,index) in userInfo" :class="index%2==0?oddClass:''">
+            <td>{{user.name}}</td>
+            <td :class="user.sex==0?'man':'woman'">{{user.sex==0?"男":"女"}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.tel}}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#content",
+        data: {
+            oddClass:"hover",
+            userInfo:[
+                {name:"张三",age:19,sex:0,tel:18923905321},
+                {name:"李四",age:29,sex:1,tel:18663905321},
+                {name:"王五",age:49,sex:0,tel:12443405321},
+                {name:"贾六",age:46,sex:0,tel:18663905321},
+                {name:"小二",age:25,sex:1,tel:11343568321}
+            ]
+        },
+        computed:{
+            isSee:function(){
+                return (this.see==1)?true:false;
+            },
+            isHate:function(){
+                return this.hate=="hate"?true:false;
+            },
+            isDo:function(){
+                return this.doIt=="do"?true:false;
+            }
+        }
+    });
+</script>
+</html>

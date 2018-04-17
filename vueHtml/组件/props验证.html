@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props验证</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<main  id="content">
+    <!-- 在 HTML 中使用 kebab-case -->
+    组件可以接收任意传入的特性，这些特性都会被添加到组件的根元素上。例如下面的add-t属性【非props】
+    <menu-link add-t="props Validate test" :address="addObj" add-label="地址"></menu-link>
+</main>
+<template id="menu">
+    <div>
+        // 在 JavaScript 中使用 camelCase
+        <h1>{{addName}}</h1>
+        <ul>
+            <li v-for="add of address">
+                <a :href="add.src" target="_blank">{{addLabel}}：{{add.name}}</a>
+            </li>
+        </ul>
+    </div>
+</template>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#content",
+        data:{
+            addObj:[
+                {
+                src:"http:www.baicu.com",
+                name:"百度"
+                },
+                {
+                    src:"http:www.google.com",
+                    name:"谷歌"
+                }
+            ]
+        },
+        components:{
+            'menu-link':{
+                template:"#menu",// 在 JavaScript 中使用 camelCase
+                data:function(){
+                    return {//当子组件中有值时，会覆盖父组件传递过来的值
+                        addName:"prop验证"
+                    }
+                },
+                props:{
+                    // 基础类型检测 (`null` 指允许任何类型)
+                    propA: Number,
+                    // 可能是多种类型
+                    propB: [String, Number],
+                    // 数值且有默认值
+                    propD: {
+                        type: Number,
+                        default: 100
+                    },
+                    // 必传且是字符串
+                    // 【HTML 特性是不区分大小写的。所以，
+                    // 当使用的不是字符串模板时，camelCase (驼峰式命名) 的 prop 需要转换为相对应的 kebab-case (短横线分隔式命名)：】
+                    addLabel: {
+                        type: String,
+                        required: true
+                    },
+                    // 数组/对象的默认值应当由一个工厂函数返回
+                    address: {
+                        type: Array,
+                        default: function () {
+                            return [{ src:"javascript:void(0);",name:"暂无地址" }];
+                        }
+                    },
+                    // 自定义验证函数
+                    propF: {
+                        validator: function (value) {
+                            return value > 10
+                        }
+                    }
+                }
+
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡和动画【css过渡】</title>
+    <style>
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .6s;
+        }
+        .fade-enter{
+            color:red;
+            font-size:30px;
+            opacity: 0;
+        }
+        .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            opacity: 0;
+        }
+        .slide-enter-active, .slide-leave-active {
+            transition: height .6s;
+        }
+        .slide-enter{
+            height:0;
+        }
+        .slide-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            height: 0;
+        }
+        .slide-enter-to,.slide-leave{
+            height:50px;
+            background-color: #f00;
+            color:#fff;
+        }
+        .slide-fade-enter-active{
+            transition:all .6s;
+        }
+        .slide-fade-leave-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .slide-fade-enter,.slide-fade-leave-to{
+            transform: translateX(60px);
+            opacity:0;
+        }
+    </style>
+</head>
+<body>
+<div id="section">
+    <h2>单元素/组件的过渡</h2>
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="slide-fade">
+            <p v-if="show">认识我。</p>
+        </transition>
+    </div>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    new Vue({
+        el: '#section',
+        data: {
+            show: true
+        }
+    })
+</script>
+</html>

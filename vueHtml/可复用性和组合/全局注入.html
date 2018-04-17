@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项合并</title>
+</head>
+<body>
+<main  id="content">
+    <h3>全局注册混入对象。</h3>
+    <h4>注意使用【 一旦使用全局混入对象，将会影响到 <b>所有</b> 之后创建的 Vue 实例。
+        使用恰当时，可以为自定义对象注入处理逻辑。</h4>
+</main>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //
+    Vue.mixin({
+        created: function () {
+            var myOption = this.$options.myOption;
+            if (myOption) {
+                console.log(myOption)
+            }
+        }
+    });
+    new Vue({
+        myOption: 'hello!'
+    })
+</script>
+</html>

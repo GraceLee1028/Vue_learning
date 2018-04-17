@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件和template或script</title>
+</head>
+<body>
+<section id="section">
+    <my-img></my-img>
+    <my-secret></my-secret>
+</section>
+<template id="tem">
+    <div>
+        <h2>你的名字</h2>
+        <img src="../../imgs/cloth.png" width="200">
+        <p>告诉我你的名字，<input type="text"></p>
+    </div>
+</template>
+<script type="text/template" id="temS">
+    <div>
+        <h2>{{name}}</h2>
+        <img :src="imgSrc" width="200">
+        <p><b v-text="description"></b><input type="text"></p>
+    </div>
+</script>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //创建组件构造器【参数为：一个包含组件选项的对象。】
+    let Profile = Vue.extend({
+        template:"#tem"
+    });
+    //注册全局组件
+    Vue.component("my-img",Profile);
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+
+        },
+        components:{
+            "my-secret":{
+                template:"#temS",
+                data:function(){
+                    return {
+                        name:"your name",
+                        imgSrc:"../imgs/cloth.png",
+                        description:"tell me,your name"
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>
