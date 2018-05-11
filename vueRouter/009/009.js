@@ -10,14 +10,16 @@ const routes = [
     {
         path:"",
         //redirect:{name:"c"}, //①、通过路由重命名【name】来重定向
-        redirect: '/choose',//①、通过path来重定向
+        //redirect: '/choose',//①、通过path来重定向
         component:{
             template:"<h1>请认真选择。空空空</h1>"
         }
     },
     {
         path:"/index",
-        component:Index
+        component:Index,
+        // /index 的别名是 /choose，意味着，当用户访问 /choose 时，URL 会保持为 /choose，但是路由匹配则为 /index【内容是/index的内容】，就像用户访问 /index 一样。
+        alias:"/choose"//别名alias：【『别名』的功能让你可以自由地将 UI 结构映射到任意的 URL，而不是受限于配置的嵌套路由结构。】
     },
     {
         path:"/choose",

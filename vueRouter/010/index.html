@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props解耦</title>
+    <style>
+        .router-link-active{
+            color:green;
+        }
+        .slide-enter-active,.slide-leave-active{
+            transition:height .6s;
+        }
+        .slide-enter,.slide-leave-to{
+            transform:translate(-100%,0);
+            height:0;
+        }
+        .slide-enter-to,.slid-leave{
+            transform:translate(0,0);
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <router-link to="/user/lea">李同学</router-link>
+    <router-link to="/user/anna">安同学</router-link>
+    <router-view></router-view>
+    <router-view name="sidebar"></router-view>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script src="../../plugins/vue-router.js"></script>
+<script src="010.js?051101"></script>
+</html>
