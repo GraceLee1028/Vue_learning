@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <button @click="goBack">返回</button>
+        <h2>通过template来构建模板</h2>
+        <p>{{msg}}</p>
+        <p>{{username}}</p>
+    </div>
+</template>
+
+<script type="es6">
+    export default {
+        name:"home",//组件名称
+        data(){
+            return {
+                msg:"我生于长空，长于烈日，翱翔于风，从未远去"
+            }
+        },
+        computed: {
+            username () {
+                // 我们很快就会看到 `params` 是什么
+                return this.$route.params.username
+            }
+        },
+        methods: {
+            goBack () {
+                window.history.length > 1
+                        ? this.$router.go(-1)
+                        : this.$router.push('/')
+            }
+        }
+    }
+</script>
+
+<style>
+
+</style>
