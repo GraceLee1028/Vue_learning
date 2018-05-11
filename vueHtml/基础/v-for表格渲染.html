@@ -28,7 +28,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(user,index) in userInfo" :class="index%2==0?oddClass:''">
+        <tr v-for="(user,index) in userInfo" :class="index%2==0?oddClass:''" :key="index">
             <td>{{user.name}}</td>
             <td :class="user.sex==0?'man':'woman'">{{user.sex==0?"男":"女"}}</td>
             <td>{{user.age}}</td>
