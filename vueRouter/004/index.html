@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态路由匹配</title>
+    <style>
+        .router-link-active{
+            color:crimson;
+        }
+        .bold{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>router的动态路由匹配:id</p>
+    <p>访问的将映射到相同的路由</p>
+    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+    <router-link to="/main">首页</router-link>
+    <router-link to="/main/one">首页1</router-link>
+    <router-link to="/main/two">首页2</router-link>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script src="../../plugins/vue-router.js"></script>
+<script src="index.js"></script>
+</html>

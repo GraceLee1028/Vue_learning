@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重定向与别名</title>
+    <style>
+        .router-link-active{
+
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <router-link to="/index">首页</router-link>
+    <router-link to="/help">帮助文档</router-link>
+    <router-view></router-view>
+    <router-view name="note"></router-view>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script src="../../plugins/vue-router.js"></script>
+<script src="009.js?051002"></script>
+</html>

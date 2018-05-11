@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>router----</title>
+    <style>
+        .router-link-active{
+            color:crimson;
+        }
+        .bold{
+            font-size:16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>router-link</h1>
+    <h1>router-view</h1>
+    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+    <router-link to="/main">首页</router-link>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script src="../../plugins/vue-router.js"></script>
+<script src="003.js"></script>
+</html>
