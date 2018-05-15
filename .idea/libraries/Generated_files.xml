@@ -1,0 +1,102 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/vueRouter/007/007-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueHtml/js/component-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/010/010-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/011/011-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/011/011-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/001/001-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueOne/js/cart-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/101/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/003/003-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/005/005-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/004/index-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/003/003-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/010/010-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/008/008-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/001/001-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/007/007-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueOne/js/pager-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/008/008-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/009/009-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/005/005-compiled.js" />
+        <item url="file://$PROJECT_DIR$/plugins/vue-router.min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/plugins/vue-router-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/006/006-compiled.js" />
+        <item url="file://$PROJECT_DIR$/plugins/vue.min-compiled.js" />
+        <item url="file://$PROJECT_DIR$/plugins/vue-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/006/006-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/004/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueHtml/js/animation-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/002/index-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/002/index-compiled-compiled.js" />
+        <item url="file://$PROJECT_DIR$/vueRouter/009/009-compiled-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/index-compiled-compiled-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/index-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/003/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/003/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/index-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/index-compiled-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/003/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/011/011-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/007-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueHtml/js/component-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/010/010-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/011/011-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/011/011-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/001/001-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueOne/js/cart-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/101/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/003/003-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/005-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/004/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/003/003-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/010/010-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/008/008-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/001/001-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/007/007-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueOne/js/pager-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/008/008-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/009/009-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/005/005-compiled.js" />
+      <root url="file://$PROJECT_DIR$/plugins/vue-router.min-compiled.js" />
+      <root url="file://$PROJECT_DIR$/plugins/vue-router-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/006-compiled.js" />
+      <root url="file://$PROJECT_DIR$/plugins/vue.min-compiled.js" />
+      <root url="file://$PROJECT_DIR$/plugins/vue-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/006/006-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/004/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueHtml/js/animation-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/002/index-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/002/index-compiled-compiled.js" />
+      <root url="file://$PROJECT_DIR$/vueRouter/009/009-compiled-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

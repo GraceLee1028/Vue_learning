@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/css/vue.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/css/vue.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mobile_template/mod/_button.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mobile_template/mod/_common.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mobile_template/mod/_form.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mobile_template/mod/_layout.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mobile_template/mod/_reset.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/package-lock.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/plugins/vue.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/cart.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/cart.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/mod/_button.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/mod/_common.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/mod/_form.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/mod/_layout.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/mod/_pagination.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/css/mod/_reset.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/js/cart.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueOne/json/data.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueRouter/010/010.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vueRouter/011/011.js" charset="UTF-8" />
+  </component>
+</project>

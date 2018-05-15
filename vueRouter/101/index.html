@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航守卫</title>
+    <style>
+        .router-link-active{
+            color:green;
+        }
+        .slide-enter-active,.slide-leave-active{
+            transition:height .6s;
+        }
+        .slide-enter,.slide-leave-to{
+            transform:translate(-100%,0);
+            height:0;
+        }
+        .slide-enter-to,.slid-leave{
+            transform:translate(0,0);
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+<p>用来通过跳转或取消的方式守卫导航</p>
+<p>参数或查询的改变并不会触发进入/离开的导航守卫</p>
+<div id="demo">
+    <router-link to="/user/lea">李同学</router-link>
+</div>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script src="../../plugins/vue-router.js"></script>
+<script src="index.js?051101"></script>
+</html>
