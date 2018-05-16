@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+<main  id="content">
+<input type="text" v-model.number="levelNum" placeholder="请输入标题的等级">
+    <heading :level="levelNum">你好，很高兴见到你！</heading>
+    <el-head :level="levelNum">会报错哦</el-head>
+    <lea-head :level="levelNum">render(),简洁</lea-head>
+</main>
+<script type="text/x-template" id="heading">
+<h1 v-if="level==1">
+    <slot></slot>
+</h1>
+<h2 v-else-if="level==2">
+    <slot></slot>
+</h2>
+<h3 v-else-if="level==3">
+    <slot></slot>
+</h3>
+<h4 v-else-if="level==4">
+    <slot></slot>
+</h4>
+<h5 v-else-if="level==5">
+    <slot></slot>
+</h5>
+<h6 v-else-if="level==6">
+    <slot></slot>
+</h6>
+</script>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    new Vue({
+        el:"#content",
+        data:{
+            levelNum:1
+        },
+        methods:{
+
+        },
+        components:{
+            heading:{
+                props:["level"],
+                template:"#heading"
+            },
+            elHead:{
+                props:{//推荐这种写法
+                    level:{
+                        type:Number,
+                        required:true,
+                        default:1
+                    }
+                },
+                template:"#heading"
+            },
+            leaHead:{
+                render:function(createEle){
+                    return createEle(
+                            "h"+this.level,//tag 标签名
+                            this.$slots.default//子组件【子元素被存储在组件实例中的 $slots.default中】
+                    )
+                },
+                props:{//推荐这种写法
+                    level:{
+                        type:Number,
+                        required:true,
+                        default:1
+                    }
+                }
+            }
+        }
+    });
+</script>
+</html>
