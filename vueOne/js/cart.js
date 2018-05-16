@@ -13,7 +13,7 @@ let vm = new Vue({
     },
     methods:{
         getShopData(){//获取数据
-            this.$http.get('json/data.json').then(response => {
+            this.$http.get('../json/data.json').then(response => {
                 // get body data
                 this.shopData = response.body["sections"];//这里的this指向vm
                 console.log(this.shopData);

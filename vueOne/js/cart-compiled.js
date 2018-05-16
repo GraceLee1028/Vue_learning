@@ -20,7 +20,7 @@ var vm = new Vue({
             var _this = this;
 
             //获取数据
-            this.$http.get('json/data.json').then(function (response) {
+            this.$http.get('../json/data.json').then(function (response) {
                 // get body data
                 _this.shopData = response.body["sections"]; //这里的this指向vm
                 console.log(_this.shopData);

@@ -40,10 +40,12 @@
     <input v-model="hello" type="text">
     <p v-des:test.a.b="hello"></p>
     这里的指令添加了钩子函数bind和update方法
-    <input v-model="hello" type="text">
-    <p v-hello="hello">test</p>
+    <input v-model="simple" type="text">
+    <p v-hello="simple">test</p>
     <h3>对象字面量</h3>
     <p v-hello="{color:'red',fontSize:'16px'}"></p>
+    <h3>简写</h3>
+    <p v-color-swatch>这里的数据，看看吧。</p>
 </main>
 </body>
 <script src="../../plugins/vue.js"></script>
@@ -52,25 +54,32 @@
     Vue.directive("focus",{
         //当被注册的元素绑定到DOM中时。
         inserted:function(el){
+            //el：指令所绑定的元素，可以用来直接操作 DOM
             el.focus();
         }
     });
+    //简写://在 bind 和 update 时触发相同行为
+    Vue.directive('color-swatch', function (el, binding) {
+        el.style.backgroundColor = binding.value;
+    });
     Vue.directive('des',{
-        bind: function (el, binding, vnode) {//只调用一次
+        bind: function (el, binding, vnode) {//只调用一次【指令第一次绑定到元素时调用。】
             var s = JSON.stringify;
+            console.log("bind +++++++++++++");
             el.innerHTML =
-                    'name: '       + s(binding.name) + '<br>' +
-                    'value: '      + s(binding.value) + '<br>' +
-                    'expression: ' + s(binding.expression) + '<br>' +
-                    'argument: '   + s(binding.arg) + '<br>' +
+                    'name: '       + s(binding.name) + '<br>' +         //指令名，不包括 v- 前缀。
+                    'value: '      + s(binding.value) + '<br>' +        //指令的绑定值
+                    'expression: ' + s(binding.expression) + '<br>' +   //字符串形式的指令表达式
+                    'argument: '   + s(binding.arg) + '<br>' +          //传给指令的参数，
                     'modifiers: '  + s(binding.modifiers) + '<br>' +
                     'vnode keys: ' + Object.keys(vnode).join(', ')
         }
     });
     //简写【在 bind 和 update 时触发相同行为，而不关心其它的钩子】
-    Vue.directive('hello',function (el, binding, vnode) {//只调用一次
+    Vue.directive('hello',function (el, binding, vnode) {
             var s = JSON.stringify;
-            el.innerHTML =
+        console.log("bind+update +++++++++++++");
+        el.innerHTML =
                     'name: '       + s(binding.name) + '<br>' +
                     'value: '      + s(binding.value) + '<br>' +
                     'expression: ' + s(binding.expression) + '<br>' +
@@ -82,7 +91,8 @@
     new Vue({
         el:"#content",
         data:{
-            hello:'你好，很高兴遇见你'
+            hello:'你好，很高兴遇见你',
+            simple:"bind和update发生相同行为！！！！！！！！！！！！！！！！！！"
         },
         methods:{
 
