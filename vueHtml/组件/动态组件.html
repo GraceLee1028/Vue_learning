@@ -7,9 +7,13 @@
 <body>
 <div id="section">
     <h3>通过使用component元素，并对其is特性绑定动态组件切换</h3>
-    <component :is="currentView"></component>
+    <component is="home"></component>
     <component is="con"></component>
     <component is="about"></component>
+    <button @click="currentView='home'">home</button>
+    <button @click="currentView='about'">about us</button>
+    <button @click="currentView='con'">欢迎页</button>
+    <component :is="currentView"></component>
 </div>
 <template id="home">
     <h1>主页</h1>
