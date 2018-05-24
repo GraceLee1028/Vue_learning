@@ -11,6 +11,9 @@
     <movie>
         <p>蛮喜欢的。</p>
     </movie>
+
+
+
     <h2>具名插槽</h2>
     <film>
         <h1  slot="title">{{film.title}}</h1>
@@ -19,6 +22,9 @@
         <p>你的影评是：</p>
         <p>蛮喜欢的。</p>
     </film>
+
+
+
     <h2>作用域插槽</h2>
     <div>
         <child class="child">
@@ -29,6 +35,7 @@
             </template>
         </child>
     </div>
+
     <h3>作用域插件的经典示例：列表组件</h3>
     <my-list>
         <li slot="item" slot-scope="props">
@@ -36,6 +43,8 @@
         </li>
     </my-list>
 </section>
+
+
 <template id="movie">
     <div>
         <h1>{{movie.title}}</h1>
@@ -44,6 +53,8 @@
         <slot></slot>
     </div>
 </template>
+
+
 <template id="film">
     <div>
         <slot name="title"></slot>
@@ -52,11 +63,13 @@
         <slot></slot>
     </div>
 </template>
+
 <template id="child">
     <div class="one">
         <slot text="I'm lea,hello everybody!"></slot>
     </div>
 </template>
+
 <template id="list">
     <ul>
         <slot name="item" v-for="item of items" :text="item"></slot>
@@ -70,7 +83,7 @@
         template:"#movie",
         data:function(){//在此处的data必须是函数
             return {
-                movie:{title:"你的名字",src:"../imgs/yourName.jpg",text:"请告诉我，你的名字"}
+                movie:{title:"你的名字",src:"../../imgs/yourName.jpg",text:"请告诉我，你的名字"}
             }
         }
     });
@@ -83,7 +96,7 @@
     let vm = new Vue({
         el:"#section",
         data:{
-            film:{title:"你的名字",src:"../imgs/yourName.jpg",text:"请告诉我，你的名字"}
+            film:{title:"你的名字",src:"../../imgs/yourName.jpg",text:"请告诉我，你的名字"}
         },
         components:{
             child:{
