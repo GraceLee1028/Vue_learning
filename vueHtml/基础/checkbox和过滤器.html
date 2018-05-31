@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>checkbox和过滤器</title>
+    <link rel="stylesheet" href="../../css/vue.css">
+</head>
+<body>
+<section id="content">
+    <label><input type="checkbox" value="fast" v-model="carArr">快车</label>
+    <label><input type="checkbox" value="special" v-model="carArr">专车</label>
+    <label><input type="checkbox" value="basic" v-model="carArr">出租</label>
+    <p>{{carArr}}</p>
+    <p>数组不能进行下列操作</p>
+    <!--<p>{{carArr | json}}</p>-->
+    <!--<p>{{carArr | capitalize}}</p>-->
+    <p v-for="car in carArr">{{car | capitalize}}+++++++++++++++++++{{car | uppercase}}</p>
+</section>
+</body>
+<script src="../../plugins/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#content",
+        data: {
+            carArr:[]
+        }
+    });
+    //需要定义指令
+    Vue.filter("capitalize",function(value){
+        var first = value.slice(0,1).toUpperCase();
+        return first+value.slice(1);
+    });
+    Vue.filter("uppercase",function(value){
+        return value.toUpperCase();
+    });
+    Vue.filter("lowercase",function(value){
+        return value.toLowerCase();
+    });
+</script>
+</html>
