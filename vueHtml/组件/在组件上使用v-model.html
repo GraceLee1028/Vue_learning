@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在组件上使用v-model</title>
+</head>
+<body>
+<section id="section">
+    <p>v-model:双向绑定</p>
+    <input type="text" v-model="name">
+    名字：{{name}}
+    <p>上面等价于：</p>
+    <input type="text" v-bind:value="name2" v-on:input="name2=$event.target.value">
+    新的名字：{{name2}}
+    <b>特点：绑定value属性值，指定input事件</b>
+    <br>
+    <el-input v-model="name3"></el-input>
+    名字在改变：{{name3}}
+</section>
+</body>
+<template id="temp">
+    <input type='text' :value="value" @input="$emit('input',$event.target.value)">
+</template>
+<script src="../../plugins/vue.js"></script>
+<script>
+    //在初始化根实例之前注册组件
+    let vm = new Vue({
+        el:"#section",
+        data:{
+            name:"lea",
+            name2:"lee",
+            name3:"nana"
+        },
+        components:{
+            "elInput":{
+                props:['value'],
+                template:"#temp"
+            }
+        }
+    })
+</script>
+</html>

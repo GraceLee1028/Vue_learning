@@ -9,29 +9,50 @@
 <main  id="content">
 <h2>混入 (mixins) 是一种分发 Vue 组件中可复用功能的非常灵活的方式。混入对象可以包含任意组件选项。<br>
     当组件使用混入对象时，所有混入对象的选项将被混入该组件本身的选项。</h2>
+    <my-con></my-con>
 </main>
 </body>
 <script src="../../plugins/vue.js"></script>
 <script>
     var myMixin = {
         created: function () {
-            this.hello()
+            console.log("混合内created钩子");
+            this.hello();//这里的hello事件执行的是组件内的函数
         },
         methods: {
             hello: function () {
-                console.log('hello from mixin!')
+                console.log('hello from mixin!');
+                alert('hello from mixin!');
             }
         }
     };
     // 定义一个使用混入对象的组件
     var Component = Vue.extend({
-        mixins: [myMixin]
+        mixins: [myMixin],
+        created:function(){//mixins的特点：同名钩子函数将混合为一个数组，因此都将被调用。
+        // 另外，混入对象的钩子将在组件自身钩子之前调用。
+            console.log('组件内created钩子');
+        },
+        template:"<button @click='getInfo'>hello</button>",
+        methods:{//当组件和混入对象含有同名选项时，这些选项将以恰当的方式混合。
+           // 比如，数据对象【如：methods】在内部会进行浅合并 (一层属性深度)，在和组件的数据发生冲突时以组件数据优先。
+            hello:function(){
+                console.log("hello 组件");
+                alert("hello 组件");
+            },
+            say:function(){
+                alert("hei");
+            },
+            getInfo:function(){
+                this.hello();
+                this.say();
+            }
+        }
     });
-    var component = new Component();
     new Vue({
         el:"#content",
         components:{
-
+            "my-con":Component
         }
     });
 </script>

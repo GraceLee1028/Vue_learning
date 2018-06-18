@@ -7,6 +7,14 @@
 </head>
 <body>
 <section id="content">
+    <h2>只有checkbox才存在boolean值，true和false,不设置value的时候，下面为true就选中，为false则不选</h2>
+    <input type="checkbox" v-model="one">
+    {{one}}
+    <br>
+    radio绑定的值非boolean,没有上面的选中和不选中的差别
+    <input type="radio" v-model="rone">
+    {{rone}}
+    <br>
     <label><input type="checkbox" value="fast" v-model="carArr">快车</label>
     <label><input type="checkbox" value="special" v-model="carArr">专车</label>
     <label><input type="checkbox" value="basic" v-model="carArr">出租</label>
@@ -15,6 +23,9 @@
     <!--<p>{{carArr | json}}</p>-->
     <!--<p>{{carArr | capitalize}}</p>-->
     <p v-for="car in carArr">{{car | capitalize}}+++++++++++++++++++{{car | uppercase}}</p>
+    <h4>去掉首位空格，局部过滤器</h4>
+    <input type="text" v-model="yourName" placeholder="你的名字">
+    你的名字:{{yourName | trim}}
 </section>
 </body>
 <script src="../../plugins/vue.js"></script>
@@ -22,7 +33,21 @@
     var vm = new Vue({
         el:"#content",
         data: {
-            carArr:[]
+            carArr:[],
+            one:false,
+            rone:true,
+            yourName:""
+        },
+        filters:{//局部过滤器
+            trim:function(value){
+                if(typeof value == "string"){
+                    String.prototype.trim = String.prototype.trim||function(value){
+                                return value.replace(/(^\s*)(\s*$)/g,"");
+                            };
+                    console.log(value.trim());
+                    return value.trim();
+                }
+            }
         }
     });
     //需要定义指令

@@ -6,9 +6,19 @@
 </head>
 <body>
 <section id="section">
-    <shop v-for="m in movies" :info="m"></shop>
+    <shop  v-for="m in movies" :info="m"></shop>
+    <shop-item ref="shopItem" :info="movies[0]"></shop-item>
+    <button type="button" @click="say">通过ref引用子组件实例</button>
 </section>
+
 <template id="temp">
+    <div>
+        <h1>{{info.title}}</h1>
+        <img :src="info.src" width="200">
+        <p>{{info.text}}</p>
+    </div>
+</template>
+<template id="temp1">
     <div>
         <h1>{{info.title}}</h1>
         <img :src="info.src" width="200">
@@ -23,6 +33,15 @@
         template:"#temp",
         props:["info"]
     });
+    Vue.component("shopItem",{
+        template:"#temp1",
+        props:["info"],
+        methods:{
+            hello:function(){
+                alert("hello shop method");
+            }
+        }
+    });
     //在初始化根实例之前注册组件
     let vm = new Vue({
         el:"#section",
@@ -32,6 +51,13 @@
                 {title:"水形物语",src:"../imgs/water.JPEG",text:"当他看我的时候，就是看我原本的样子"},
                 {title:"大鱼海棠",src:"../imgs/fish.jpg",text:"人生是一场旅程。我们经历了几次轮回，才换来这个旅程。而这个旅程很短，因此不妨大胆一些，不妨大胆一些去爱一个人，去攀一座山，去追一个梦……有很多事我都不明白。但我相信一件事。上天让我们来到这个世上，就是为了让我们创造奇迹。"}
             ]
+        },
+        methods:{
+            say:function(){
+                alert("父组件中的方法 say");
+                console.log(this.$refs.shopItem);
+                this.$refs.shopItem.hello();
+            }
         }
     })
 </script>

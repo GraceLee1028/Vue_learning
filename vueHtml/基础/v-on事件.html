@@ -8,6 +8,7 @@
 <div id="section">
     {{msg}}
     <button v-on:click="changeHello">完成</button>
+    <button v-once:click="changeHello">only one</button>
     <button @click="changeBg" :style="{backgroundColor:bgBtn}">完成</button>
 </div>
 </body>
@@ -21,7 +22,12 @@
         },
         methods:{
             changeHello:function(){
-                this.msg = "该你了";
+                alert("v-on的click事件");
+                this.msg = "该你了,v-on";
+            },
+            changeOne:function(){
+                alert("v-once的click事件,只有一次");
+                this.msg = "该你了，v-once";
             },
             changeBg:function(){
                 this.bgBtn = "red";
